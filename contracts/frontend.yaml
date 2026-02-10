@@ -1,0 +1,225 @@
+openapi: "3.0.3"
+
+info:
+  title: "frontend API"
+  version: "0.1.0"
+  description: >
+    API contract for the frontend service. Provides page-composition endpoints
+    that aggregate data from the web-server backend and return it as structured
+    PageData responses.
+  x-accord-status: draft
+  x-accord-scanned: "2026-02-10T15:00:00Z"
+
+paths:
+  /api/pages/dashboard:
+    get:
+      summary: "Get dashboard page data"
+      operationId: getDashboardPage
+      description: >
+        Returns aggregated dashboard data including stats and recent devices.
+        Internally fetches from web-server /api/dashboard/stats and /api/dashboard/devices.
+      responses:
+        '200':
+          description: "Dashboard page data"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageData'
+
+  /api/pages/devices/search:
+    get:
+      summary: "Search devices across multiple fields"
+      operationId: searchDevices
+      description: >
+        Full-text search across device name, IP address, and MAC address.
+        Returns paginated results wrapped in PageData.
+        Internally calls web-server GET /api/devices/search.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+          description: "Search query (matches against name, ipAddress, macAddress)"
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: "Zero-based page index"
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+          description: "Number of items per page"
+      responses:
+        '200':
+          description: "Paginated search results"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageDataDevices'
+
+  /api/pages/devices:
+    get:
+      summary: "Get devices page data (paginated)"
+      operationId: getDevicesPage
+      description: >
+        Returns a paginated list of devices wrapped in PageData.
+        Internally proxies to web-server /api/proxy/devices with the same query parameters.
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: "Zero-based page index"
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+          description: "Number of items per page"
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [ONLINE, OFFLINE, MAINTENANCE, UNKNOWN]
+          description: "Filter by device status"
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: "Filter by device name (case-insensitive substring match)"
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+            default: name
+            enum: [name, status, lastSeen]
+          description: "Sort field"
+        - name: direction
+          in: query
+          required: false
+          schema:
+            type: string
+            default: asc
+            enum: [asc, desc]
+          description: "Sort direction"
+      responses:
+        '200':
+          description: "Paginated devices page data"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageDataDevices'
+
+components:
+  schemas:
+    PageData:
+      type: object
+      properties:
+        title:
+          type: string
+          description: "Page title"
+        data:
+          type: object
+          description: "Page-specific data payload"
+        timestamp:
+          type: string
+          format: date-time
+          description: "Server timestamp when the page was generated"
+      required:
+        - title
+        - data
+        - timestamp
+
+    PageDataDevices:
+      type: object
+      properties:
+        title:
+          type: string
+          description: "Page title"
+        data:
+          $ref: '#/components/schemas/PaginatedDeviceResponse'
+        timestamp:
+          type: string
+          format: date-time
+          description: "Server timestamp when the page was generated"
+      required:
+        - title
+        - data
+        - timestamp
+
+    PaginatedDeviceResponse:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Device'
+        page:
+          type: integer
+          description: "Current page index (zero-based)"
+        size:
+          type: integer
+          description: "Page size"
+        totalElements:
+          type: integer
+          format: int64
+          description: "Total number of matching elements"
+        totalPages:
+          type: integer
+          description: "Total number of pages"
+        first:
+          type: boolean
+          description: "Whether this is the first page"
+        last:
+          type: boolean
+          description: "Whether this is the last page"
+      required:
+        - content
+        - page
+        - size
+        - totalElements
+        - totalPages
+        - first
+        - last
+
+    Device:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Unique device identifier"
+        name:
+          type: string
+          description: "Device display name"
+        ipAddress:
+          type: string
+          description: "Device IP address"
+        macAddress:
+          type: string
+          description: "Device MAC address"
+        status:
+          $ref: '#/components/schemas/DeviceStatus'
+        lastSeen:
+          type: string
+          format: date-time
+          description: "Last time the device was seen"
+      required:
+        - id
+        - name
+
+    DeviceStatus:
+      type: string
+      enum: [ONLINE, OFFLINE, MAINTENANCE, UNKNOWN]
+      description: "Device operational status"
