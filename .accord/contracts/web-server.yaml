@@ -50,6 +50,67 @@ paths:
                 items:
                   $ref: '#/components/schemas/DeviceSummary'
 
+  /api/proxy/devices:
+    get:
+      summary: "List devices with pagination"
+      description: >
+        Returns a paginated list of devices proxied from device-manager.
+        Supports filtering by status, searching by name, and sorting.
+      operationId: getDevicesPaginated
+      tags:
+        - DeviceProxy
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: "Zero-based page index"
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+          description: "Number of items per page"
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [ONLINE, OFFLINE, MAINTENANCE, UNKNOWN]
+          description: "Filter by device status"
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: "Search by device name (case-insensitive contains)"
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "name"
+            enum: ["name", "lastSeen", "status"]
+          description: "Field to sort by"
+        - name: direction
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "asc"
+            enum: ["asc", "desc"]
+          description: "Sort direction"
+      responses:
+        '200':
+          description: "Paginated list of devices"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDeviceResponse'
+
   /api/proxy/devices/{id}:
     get:
       summary: "Get device by ID (proxy)"
@@ -101,6 +162,40 @@ components:
         - onlineDevices
         - offlineDevices
         - lastUpdated
+
+    PaginatedDeviceResponse:
+      type: object
+      description: "Paginated wrapper for device list responses"
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceSummary'
+        page:
+          type: integer
+          description: "Current page index (zero-based)"
+        size:
+          type: integer
+          description: "Number of items per page"
+        totalElements:
+          type: integer
+          format: int64
+          description: "Total number of matching devices"
+        totalPages:
+          type: integer
+          description: "Total number of pages"
+        first:
+          type: boolean
+          description: "Whether this is the first page"
+        last:
+          type: boolean
+          description: "Whether this is the last page"
+      required:
+        - content
+        - page
+        - size
+        - totalElements
+        - totalPages
 
     DeviceSummary:
       type: object

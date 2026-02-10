@@ -5,7 +5,7 @@ to: web-server
 scope: external
 type: api-addition
 priority: high
-status: in-progress
+status: completed
 created: 2026-02-10T12:00:00Z
 updated: 2026-02-10T12:00:00Z
 related_contract: .accord/contracts/web-server.yaml
