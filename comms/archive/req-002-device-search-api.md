@@ -5,9 +5,9 @@ to: device-manager
 scope: external
 type: api-addition
 priority: high
-status: pending
+status: completed
 created: 2026-02-10T15:15:00Z
-updated: 2026-02-10T15:15:00Z
+updated: 2026-02-10T15:25:00Z
 related_contract: .accord/contracts/device-manager.yaml
 ---
 
