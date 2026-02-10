@@ -2,7 +2,7 @@ openapi: "3.0.3"
 
 info:
   title: "frontend API"
-  version: "0.1.0"
+  version: "0.2.0"
   description: >
     API contract for the frontend service.
     Serves page data by consuming web-server APIs and composing them into page views.
@@ -27,14 +27,58 @@ paths:
 
   /api/pages/devices:
     get:
-      summary: "Get devices page data"
+      summary: "Get paginated devices page data"
       operationId: getDevicesPage
       description: >
-        Returns a PageData object containing the list of devices.
-        Internally fetches data from web-server /api/dashboard/devices.
+        Returns a PageData object containing a paginated list of devices with
+        filtering, search, and sorting support. Internally proxies to
+        web-server /api/proxy/devices (falls back to mock data if unavailable).
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: "Zero-based page index"
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+          description: "Number of items per page"
+        - name: status
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/DeviceStatus'
+          description: "Filter by device status"
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: "Search by device name (case-insensitive contains)"
+        - name: sort
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "name"
+            enum: ["name", "lastSeen", "status"]
+          description: "Field to sort by"
+        - name: direction
+          in: query
+          required: false
+          schema:
+            type: string
+            default: "asc"
+            enum: ["asc", "desc"]
+          description: "Sort direction"
       responses:
         '200':
-          description: "Successful response with devices page data"
+          description: "Successful response with paginated devices page data"
           content:
             application/json:
               schema:
@@ -58,3 +102,62 @@ components:
       required:
         - title
         - timestamp
+
+    DeviceStatus:
+      type: string
+      description: "Status of a device"
+      enum:
+        - ONLINE
+        - OFFLINE
+        - MAINTENANCE
+        - UNKNOWN
+
+    Device:
+      type: object
+      description: "Device representation"
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        ipAddress:
+          type: string
+        macAddress:
+          type: string
+        status:
+          $ref: '#/components/schemas/DeviceStatus'
+        lastSeen:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - status
+
+    PaginatedDeviceResponse:
+      type: object
+      description: "Paginated wrapper for device lists"
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Device'
+        page:
+          type: integer
+        size:
+          type: integer
+        totalElements:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+        first:
+          type: boolean
+        last:
+          type: boolean
+      required:
+        - content
+        - page
+        - size
+        - totalElements
+        - totalPages
