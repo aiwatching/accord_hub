@@ -2,15 +2,16 @@ openapi: "3.0.3"
 
 info:
   title: "device-manager API"
-  version: "0.1.0"
-  description: "API contract for the device-manager service. Manages device lifecycle — CRUD, status queries, and paginated listing."
-  x-accord-status: draft
-  x-accord-scanned: "2026-02-10T00:00:00Z"
+  version: "0.2.0"
+  description: "API contract for the device-manager service. Manages network devices with CRUD operations, filtering, and search."
+  x-accord-status: stable
+  x-accord-scanned: "2026-02-11T00:00:00Z"
 
 paths:
   /api/devices:
     get:
-      summary: "List devices with filtering and pagination"
+      summary: "List devices"
+      description: "Returns a paginated list of devices with optional filtering by status and name, and configurable sorting."
       operationId: listDevices
       parameters:
         - name: status
@@ -24,7 +25,7 @@ paths:
           required: false
           schema:
             type: string
-          description: "Filter by device name (case-insensitive substring match)"
+          description: "Filter by device name (case-insensitive partial match)"
         - name: page
           in: query
           required: false
@@ -47,8 +48,8 @@ paths:
             default: "name"
             enum:
               - name
-              - lastSeen
               - status
+              - lastSeen
           description: "Sort field"
         - name: direction
           in: query
@@ -67,26 +68,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaginatedDeviceResponse'
+
     post:
-      summary: "Create a new device"
+      summary: "Create a device"
+      description: "Creates a new device. A UUID is assigned automatically. Status defaults to UNKNOWN if not provided."
       operationId: createDevice
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Device'
+              $ref: '#/components/schemas/DeviceInput'
       responses:
         '201':
-          description: "Device created successfully"
+          description: "Device created"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Device'
 
+  /api/devices/{id}:
+    get:
+      summary: "Get device by ID"
+      operationId: getDevice
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: "Device unique identifier"
+      responses:
+        '200':
+          description: "Device found"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Device'
+        '404':
+          description: "Device not found"
+
   /api/devices/search:
     get:
-      summary: "Search devices by query"
+      summary: "Search devices"
+      description: "Full-text search across device fields. Returns paginated results."
       operationId: searchDevices
       parameters:
         - name: q
@@ -94,7 +119,7 @@ paths:
           required: true
           schema:
             type: string
-          description: "Search query — matched against device name, ipAddress, macAddress (case-insensitive substring)"
+          description: "Search query string"
         - name: page
           in: query
           required: false
@@ -117,29 +142,85 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedDeviceResponse'
 
-  /api/devices/{id}:
-    get:
-      summary: "Get a device by ID"
-      operationId: getDeviceById
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-          description: "Unique device identifier"
-      responses:
-        '200':
-          description: "Device found"
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Device'
-        '404':
-          description: "Device not found"
-
 components:
   schemas:
+    Device:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Unique identifier (UUID)"
+        name:
+          type: string
+          description: "Device display name"
+        ipAddress:
+          type: string
+          description: "Device IP address"
+        macAddress:
+          type: string
+          description: "Device MAC address"
+        status:
+          $ref: '#/components/schemas/DeviceStatus'
+        lastSeen:
+          type: string
+          format: date-time
+          description: "Timestamp of when the device was last seen"
+        plugins:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plugin'
+          description: "Network protocol plugins associated with this device"
+      required:
+        - id
+
+    DeviceInput:
+      type: object
+      description: "Payload for creating a new device (id is auto-generated)"
+      properties:
+        name:
+          type: string
+          description: "Device display name"
+        ipAddress:
+          type: string
+          description: "Device IP address"
+        macAddress:
+          type: string
+          description: "Device MAC address"
+        status:
+          $ref: '#/components/schemas/DeviceStatus'
+
+    Plugin:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Unique plugin identifier"
+        name:
+          type: string
+          description: "Display name of the plugin (e.g. 'SNMP v3')"
+        protocol:
+          $ref: '#/components/schemas/PluginProtocol'
+        version:
+          type: string
+          description: "Plugin version"
+        enabled:
+          type: boolean
+          description: "Whether the plugin is enabled"
+      required:
+        - id
+        - name
+        - protocol
+
+    PluginProtocol:
+      type: string
+      enum:
+        - SNMP
+        - NETCONF
+        - SSH
+        - TELNET
+        - HTTP
+      description: "Network protocol type supported by a plugin"
+
     DeviceStatus:
       type: string
       enum:
@@ -149,30 +230,6 @@ components:
         - UNKNOWN
       description: "Current operational status of a device"
 
-    Device:
-      type: object
-      properties:
-        id:
-          type: string
-          description: "Unique device identifier (UUID, assigned by server on create)"
-        name:
-          type: string
-          description: "Display name of the device"
-        ipAddress:
-          type: string
-          description: "IP address of the device"
-        macAddress:
-          type: string
-          description: "MAC address of the device"
-        status:
-          $ref: '#/components/schemas/DeviceStatus'
-        lastSeen:
-          type: string
-          format: date-time
-          description: "Timestamp of last device activity"
-      required:
-        - name
-
     PaginatedDeviceResponse:
       type: object
       properties:
@@ -180,7 +237,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Device'
-          description: "List of devices for the current page"
+          description: "Devices on the current page"
         page:
           type: integer
           description: "Current page number (zero-based)"
@@ -196,10 +253,10 @@ components:
           description: "Total number of pages"
         first:
           type: boolean
-          description: "True if this is the first page"
+          description: "Whether this is the first page"
         last:
           type: boolean
-          description: "True if this is the last page"
+          description: "Whether this is the last page"
       required:
         - content
         - page
