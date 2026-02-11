@@ -4,11 +4,11 @@ info:
   title: "frontend API"
   version: "0.1.0"
   description: >
-    API contract for the frontend service. Provides page-composition endpoints
-    that aggregate data from the web-server backend and return it as structured
-    PageData responses.
+    API contract for the frontend service. Serves as a UI/proxy layer that
+    aggregates data from backend services (device-manager via web-server) and
+    wraps responses in PageData objects for frontend consumption.
   x-accord-status: draft
-  x-accord-scanned: "2026-02-10T15:00:00Z"
+  x-accord-scanned: "2026-02-11T00:00:00Z"
 
 paths:
   /api/pages/dashboard:
@@ -16,60 +16,69 @@ paths:
       summary: "Get dashboard page data"
       operationId: getDashboardPage
       description: >
-        Returns aggregated dashboard data including stats and recent devices.
-        Internally fetches from web-server /api/dashboard/stats and /api/dashboard/devices.
+        Returns dashboard page containing aggregated stats and a list of
+        recent devices. Data is fetched from the web-server dashboard endpoints.
       responses:
         '200':
           description: "Dashboard page data"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageData'
+                allOf:
+                  - $ref: '#/components/schemas/PageData'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/DashboardData'
 
   /api/pages/devices/search:
     get:
-      summary: "Search devices across multiple fields"
+      summary: "Search devices by query"
       operationId: searchDevices
       description: >
-        Full-text search across device name, IP address, and MAC address.
-        Returns paginated results wrapped in PageData.
-        Internally calls web-server GET /api/devices/search.
+        Searches devices by name, IP address, or MAC address (case-insensitive
+        substring match). Returns paginated results wrapped in PageData.
       parameters:
         - name: q
           in: query
           required: true
           schema:
             type: string
-          description: "Search query (matches against name, ipAddress, macAddress)"
+          description: "Search query — matched against device name, ipAddress, macAddress"
         - name: page
           in: query
           required: false
           schema:
             type: integer
             default: 0
-          description: "Zero-based page index"
+          description: "Page number (zero-based)"
         - name: size
           in: query
           required: false
           schema:
             type: integer
             default: 20
-          description: "Number of items per page"
+          description: "Page size"
       responses:
         '200':
-          description: "Paginated search results"
+          description: "Paginated search results wrapped in PageData"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageDataDevices'
+                allOf:
+                  - $ref: '#/components/schemas/PageData'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/PaginatedDeviceResponse'
 
   /api/pages/devices:
     get:
-      summary: "Get devices page data (paginated)"
+      summary: "List devices with filtering and pagination"
       operationId: getDevicesPage
       description: >
-        Returns a paginated list of devices wrapped in PageData.
-        Internally proxies to web-server /api/proxy/devices with the same query parameters.
+        Returns a paginated, filterable, sortable list of devices wrapped
+        in PageData. Proxies to the device-manager service via web-server.
       parameters:
         - name: page
           in: query
@@ -77,20 +86,19 @@ paths:
           schema:
             type: integer
             default: 0
-          description: "Zero-based page index"
+          description: "Page number (zero-based)"
         - name: size
           in: query
           required: false
           schema:
             type: integer
             default: 20
-          description: "Number of items per page"
+          description: "Page size"
         - name: status
           in: query
           required: false
           schema:
-            type: string
-            enum: [ONLINE, OFFLINE, MAINTENANCE, UNKNOWN]
+            $ref: '#/components/schemas/DeviceStatus'
           description: "Filter by device status"
         - name: name
           in: query
@@ -103,123 +111,169 @@ paths:
           required: false
           schema:
             type: string
-            default: name
-            enum: [name, status, lastSeen]
+            default: "name"
+            enum:
+              - name
+              - lastSeen
+              - status
           description: "Sort field"
         - name: direction
           in: query
           required: false
           schema:
             type: string
-            default: asc
-            enum: [asc, desc]
+            default: "asc"
+            enum:
+              - asc
+              - desc
           description: "Sort direction"
       responses:
         '200':
-          description: "Paginated devices page data"
+          description: "Paginated device list wrapped in PageData"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageDataDevices'
+                allOf:
+                  - $ref: '#/components/schemas/PageData'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/PaginatedDeviceResponse'
 
 components:
   schemas:
     PageData:
       type: object
+      description: "Standard response wrapper for all frontend page endpoints"
       properties:
         title:
           type: string
-          description: "Page title"
+          description: "Page title / context label"
         data:
+          description: "Flexible data payload (varies by endpoint)"
+        timestamp:
+          type: string
+          format: date-time
+          description: "Server timestamp (set automatically on response creation)"
+      required:
+        - title
+        - data
+        - timestamp
+
+    DashboardData:
+      type: object
+      description: "Dashboard payload containing stats and recent devices"
+      properties:
+        stats:
           type: object
-          description: "Page-specific data payload"
-        timestamp:
-          type: string
-          format: date-time
-          description: "Server timestamp when the page was generated"
-      required:
-        - title
-        - data
-        - timestamp
-
-    PageDataDevices:
-      type: object
-      properties:
-        title:
-          type: string
-          description: "Page title"
-        data:
-          $ref: '#/components/schemas/PaginatedDeviceResponse'
-        timestamp:
-          type: string
-          format: date-time
-          description: "Server timestamp when the page was generated"
-      required:
-        - title
-        - data
-        - timestamp
-
-    PaginatedDeviceResponse:
-      type: object
-      properties:
-        content:
+          description: "Aggregated dashboard statistics from web-server"
+        recentDevices:
           type: array
           items:
             $ref: '#/components/schemas/Device'
-        page:
-          type: integer
-          description: "Current page index (zero-based)"
-        size:
-          type: integer
-          description: "Page size"
-        totalElements:
-          type: integer
-          format: int64
-          description: "Total number of matching elements"
-        totalPages:
-          type: integer
-          description: "Total number of pages"
-        first:
+          description: "List of recently active devices"
+
+    DeviceStatus:
+      type: string
+      enum:
+        - ONLINE
+        - OFFLINE
+        - MAINTENANCE
+        - UNKNOWN
+      description: "Current operational status of a device"
+
+    PluginProtocol:
+      type: string
+      enum:
+        - SNMP
+        - NETCONF
+        - SSH
+        - TELNET
+        - HTTP
+      description: "Network protocol type supported by a plugin"
+
+    Plugin:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Unique plugin identifier"
+        name:
+          type: string
+          description: "Display name of the plugin (e.g. 'SNMP v3')"
+        protocol:
+          $ref: '#/components/schemas/PluginProtocol'
+        version:
+          type: string
+          description: "Plugin version"
+        enabled:
           type: boolean
-          description: "Whether this is the first page"
-        last:
-          type: boolean
-          description: "Whether this is the last page"
+          description: "Whether the plugin is enabled"
       required:
-        - content
-        - page
-        - size
-        - totalElements
-        - totalPages
-        - first
-        - last
+        - id
+        - name
+        - protocol
 
     Device:
       type: object
       properties:
         id:
           type: string
-          description: "Unique device identifier"
+          description: "Unique device identifier (UUID)"
         name:
           type: string
-          description: "Device display name"
+          description: "Display name of the device"
         ipAddress:
           type: string
-          description: "Device IP address"
+          description: "IP address of the device"
         macAddress:
           type: string
-          description: "Device MAC address"
+          description: "MAC address of the device"
         status:
           $ref: '#/components/schemas/DeviceStatus'
         lastSeen:
           type: string
           format: date-time
-          description: "Last time the device was seen"
+          description: "Timestamp of last device activity"
+        plugins:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plugin'
+          description: "Network protocol plugins associated with this device"
       required:
-        - id
         - name
 
-    DeviceStatus:
-      type: string
-      enum: [ONLINE, OFFLINE, MAINTENANCE, UNKNOWN]
-      description: "Device operational status"
+    PaginatedDeviceResponse:
+      type: object
+      description: "Paginated response containing a list of devices"
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Device'
+          description: "List of devices for the current page"
+        page:
+          type: integer
+          description: "Current page number (zero-based)"
+        size:
+          type: integer
+          description: "Page size"
+        totalElements:
+          type: integer
+          format: int64
+          description: "Total number of matching devices"
+        totalPages:
+          type: integer
+          description: "Total number of pages"
+        first:
+          type: boolean
+          description: "True if this is the first page"
+        last:
+          type: boolean
+          description: "True if this is the last page"
+      required:
+        - content
+        - page
+        - size
+        - totalElements
+        - totalPages
