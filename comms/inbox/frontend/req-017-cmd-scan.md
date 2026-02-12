@@ -1,15 +1,15 @@
 ---
-id: req-013-cmd-scan
+id: req-017-cmd-scan
 from: orchestrator
-to: device-manager
+to: frontend
 scope: external
 type: command
 command: scan
 command_args: ""
 priority: medium
 status: pending
-created: 2026-02-12T00:00:00Z
-updated: 2026-02-12T00:00:00Z
+created: 2026-02-12T23:41:17Z
+updated: 2026-02-12T23:41:17Z
 ---
 
 ## What
