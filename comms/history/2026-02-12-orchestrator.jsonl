@@ -1,9 +1,3 @@
-{"ts":"2026-02-12T06:03:29Z","request_id":"req-001-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to device-manager"}
-{"ts":"2026-02-12T06:03:29Z","request_id":"req-002-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to web-server"}
-{"ts":"2026-02-12T06:03:30Z","request_id":"req-003-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to frontend"}
-{"ts":"2026-02-12T06:16:35Z","request_id":"req-004-cmd-check-inbox","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: check-inbox to device-manager"}
-{"ts":"2026-02-12T06:16:36Z","request_id":"req-005-cmd-check-inbox","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: check-inbox to web-server"}
-{"ts":"2026-02-12T06:16:36Z","request_id":"req-006-cmd-check-inbox","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: check-inbox to frontend"}
-{"ts":"2026-02-12T22:15:53Z","request_id":"req-007-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to device-manager"}
-{"ts":"2026-02-12T22:15:53Z","request_id":"req-008-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to frontend"}
-{"ts":"2026-02-12T22:15:53Z","request_id":"req-009-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to web-server"}
+{"ts":"2026-02-12T22:46:18Z","request_id":"req-010-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to device-manager"}
+{"ts":"2026-02-12T22:46:18Z","request_id":"req-011-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to frontend"}
+{"ts":"2026-02-12T22:46:18Z","request_id":"req-012-cmd-scan","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to web-server"}

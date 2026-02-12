@@ -1,20 +1,20 @@
 ---
-id: req-005-cmd-check-inbox
+id: req-010-cmd-scan
 from: orchestrator
-to: web-server
+to: device-manager
 scope: external
 type: command
-command: check-inbox
+command: scan
 command_args: ""
 priority: medium
 status: pending
-created: 2026-02-12T06:16:23Z
-updated: 2026-02-12T06:16:23Z
+created: 2026-02-12T22:45:09Z
+updated: 2026-02-12T22:45:09Z
 ---
 
 ## What
 
-Remote command: `check-inbox`
+Remote command: `scan`
 
 ## Proposed Change
 
