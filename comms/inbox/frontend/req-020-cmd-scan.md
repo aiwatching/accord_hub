@@ -1,5 +1,5 @@
 ---
-id: req-017-cmd-scan
+id: req-020-cmd-scan
 from: orchestrator
 to: frontend
 scope: external
@@ -8,8 +8,8 @@ command: scan
 command_args: ""
 priority: medium
 status: pending
-created: 2026-02-12T23:41:17Z
-updated: 2026-02-12T23:41:17Z
+created: 2026-02-13T05:40:05Z
+updated: 2026-02-13T05:40:05Z
 ---
 
 ## What
