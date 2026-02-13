@@ -1,0 +1,3 @@
+{"ts":"2026-02-13T18:46:42Z","request_id":"req-001-cmd-scan","from_status":"new","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to device-manager"}
+{"ts":"2026-02-13T18:46:42Z","request_id":"req-002-cmd-scan","from_status":"new","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to frontend"}
+{"ts":"2026-02-13T18:46:42Z","request_id":"req-003-cmd-scan","from_status":"new","to_status":"pending","actor":"orchestrator","detail":"Sent remote command: scan to web-server"}
