@@ -1,0 +1,39 @@
+[accord-agent] 2026-02-14 03:55:15 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 03:55:15 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 03:55:15 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 03:55:15 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:55:15 [INFO] Dispatching: 8 pending request(s)
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: processing req-001-cmd-scan for device-manager
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: command fast-path "scan" for req-001-cmd-scan
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: processing req-002-cmd-scan for web-server
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: command fast-path "scan" for req-002-cmd-scan
+[accord-agent] 2026-02-14 03:55:15 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: processing req-003-cmd-scan for frontend
+[accord-agent] 2026-02-14 03:55:15 [INFO] Worker 0: command fast-path "scan" for req-003-cmd-scan
+[accord-agent] 2026-02-14 03:55:15 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:55:15 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 03:55:16 [WARN] Sync push failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh push --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:55:16 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:16 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:16 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:18 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:19 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:22 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:39 [INFO] Shutting down...
+[accord-agent] 2026-02-14 03:55:39 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:55:53 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 03:55:53 [INFO] Hub Service listening on http://localhost:3000
