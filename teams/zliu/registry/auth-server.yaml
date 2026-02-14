@@ -1,0 +1,38 @@
+# Accord v2 Service/Module Registry (YAML)
+# Machine-readable registry entry for a service or module.
+# Lives at teams/{team}/registry/{name}.yaml in the accord-hub repository.
+
+name: auth-server
+
+type: service
+description: "Authentication and authorization service"
+
+maintainer: ai
+  # ai      — fully autonomous, processed by agent daemon
+  # human   — requires human action, agent skips
+  # hybrid  — requires human approval before agent processes
+  # external — owned by another team (cross-team routing)
+
+language: typescript
+  # primary language for this service
+
+contract: contracts/auth-server.yaml
+  # Path to the external contract (relative to team dir)
+
+owns:
+  - "User authentication"
+  - "Session management"
+  - "JWT token generation"
+  - "User credentials"
+
+exposes:
+  - "User login/logout"
+  - "Token validation"
+  - "User registration"
+  - "Password management"
+
+depends_on:
+  # Currently no dependencies, auth-server is a foundational service
+  # Other services will depend on auth-server
+
+responsibility: "Handles user authentication, authorization, session management, and secure token generation for the system"
