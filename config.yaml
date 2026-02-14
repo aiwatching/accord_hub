@@ -1,0 +1,16 @@
+version: "0.2"
+role: orchestrator
+
+project:
+  name: demo-project
+
+services:
+  - name: device-manager
+  - name: web-server
+  - name: frontend
+
+settings:
+  sync_mode: on-action
+  require_human_approval: true
+  archive_completed: true
+  history_enabled: true
