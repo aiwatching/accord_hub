@@ -1,0 +1,18 @@
+version: "1.0"
+role: orchestrator
+team: zliu
+project:
+  name: demo-project
+services:
+  - name: device-manager
+    maintainer: ai
+  - name: frontend
+    maintainer: ai
+  - name: web-server
+    maintainer: ai
+
+settings:
+  sync_mode: on-action
+  require_human_approval: true
+  archive_completed: true
+  history_enabled: true

@@ -1,0 +1,18 @@
+# Accord v2 Organization Config
+# Root-level configuration for a multi-team Accord hub.
+# Lives at the root of the accord-hub repository.
+
+version: "1.0"
+
+org: zliu
+  # Organization or project group name
+
+teams:
+  - name: zliu
+    description: ""
+    # Each team has its own directory under teams/{name}/
+
+# Optional global settings (teams can override)
+# settings:
+#   require_human_approval: false
+#   history_enabled: true
