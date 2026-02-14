@@ -1,15 +1,15 @@
 ---
-id: req-013-cmd-scan
+id: req-001-cmd-scan
 from: orchestrator
 to: device-manager
 scope: external
 type: command
 command: scan
-command_args: ""
+command_args: ''
 priority: medium
 status: completed
-created: 2026-02-12T00:00:00Z
-updated: 2026-02-12T23:41:11Z
+created: 2026-02-13T18:46:00.000Z
+updated: '2026-02-14T04:55:05.202Z'
 ---
 
 ## What
@@ -28,12 +28,15 @@ Orchestrator diagnostic: requested by user.
 
 None — read-only diagnostic command.
 
+
 ## Result
 
-### Scan Report
+```
+## Scan Results
 
-- **device-manager.yaml**: PASS
+- ✓ device-manager.yaml
+- ✓ frontend.yaml
+- ✓ web-server.yaml
+```
 
-**Checked**: 1, **Errors**: 0
-
-Executed by: accord-agent.sh at 2026-02-12T23:41:11Z
+*Executed by: accord-agent.sh (TypeScript)*

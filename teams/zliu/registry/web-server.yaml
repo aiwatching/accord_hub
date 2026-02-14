@@ -1,0 +1,38 @@
+# Accord v2 Service/Module Registry (YAML)
+# Machine-readable registry entry for a service or module.
+# Lives at teams/{team}/registry/{name}.yaml in the accord-hub repository.
+
+name: web-server
+
+# type: service            # service (default) or module
+# description: ""          # brief description of this service/module
+
+maintainer: ai
+  # ai      — fully autonomous, processed by agent daemon
+  # human   — requires human action, agent skips
+  # hybrid  — requires human approval before agent processes
+  # external — owned by another team (cross-team routing)
+
+# owner: ""                # who/what handles this (agent name, email, etc.)
+# language: ""             # primary language (typescript, java, python, etc.)
+# directory: ""            # source directory (for modules)
+
+# contract: contracts/web-server.yaml
+  # Path to the external contract (relative to team dir)
+
+# owns:                    # data entities / domains this service owns
+#   - "Device entity"
+#   - "Discovery scans"
+
+# exposes:                 # capabilities this service provides
+#   - "Device CRUD"
+#   - "Device search"
+
+# depends_on:              # services/modules this depends on
+#   - device-manager                        # simple: same-team service
+#   - service: auth-service                 # explicit same-team
+#     contract: contracts/auth-service.yaml
+#   - team: platform-team                   # cross-team dependency
+#     contract: user-api.yaml
+
+# responsibility: ""       # 1-2 sentence summary of core responsibility
