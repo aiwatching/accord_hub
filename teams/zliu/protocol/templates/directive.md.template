@@ -1,0 +1,52 @@
+---
+# Accord Directive Template
+# See docs/DESIGN-V2.md for full specification.
+
+id: dir-{{DIRECTIVE_NUMBER}}-{{SHORT_DESCRIPTION}}
+  # Format: dir-{NNN}-{short-description}
+
+title: {{TITLE}}
+  # Human-readable title for the directive
+
+priority: {{PRIORITY}}
+  # One of: low, medium, high, critical
+
+status: pending
+  # One of: pending, in-progress, completed, failed
+  # New directives always start as pending
+
+created: {{CREATED_TIMESTAMP}}
+  # ISO 8601 format, e.g. 2026-02-11T10:00:00Z
+
+updated: {{CREATED_TIMESTAMP}}
+  # ISO 8601 format, updated on each status transition
+
+requests: []
+  # List of request IDs spawned from this directive
+---
+
+## Requirement
+
+{{REQUIREMENT}}
+
+<!-- Describe the high-level requirement in 2-5 sentences.
+     What does the user/stakeholder want achieved across the system? -->
+
+## Acceptance Criteria
+
+{{ACCEPTANCE_CRITERIA}}
+
+<!-- Concrete, verifiable criteria for completion.
+     Each criterion should be testable. -->
+
+## Decomposition
+
+| Request | Target | Status |
+|---------|--------|--------|
+| | | |
+
+<!-- Populated by the orchestrator when decomposing.
+     Each row links to a dispatched request.
+     Example:
+     | req-010-add-search-api | device-manager | pending |
+     | req-011-add-search-ui  | frontend       | pending | -->

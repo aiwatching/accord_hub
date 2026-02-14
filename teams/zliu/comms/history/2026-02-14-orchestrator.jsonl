@@ -1,0 +1,1 @@
+{"ts":"2026-02-14T04:58:16Z","request_id":"dir-001-batch-delete-devices","from_status":"pending","to_status":"in-progress","actor":"orchestrator","directive_id":"dir-001-batch-delete-devices","detail":"Decomposed into 2 requests: req-001-add-batch-delete-api (device-manager), req-002-add-batch-delete-ui (frontend)"}

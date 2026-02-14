@@ -1,0 +1,2 @@
+[accord-agent] 2026-02-14 04:55:04 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:55:04 [INFO] Hub Service listening on http://localhost:3000

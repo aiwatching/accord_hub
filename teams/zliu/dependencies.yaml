@@ -1,0 +1,30 @@
+# Accord v2 Cross-Team Dependencies
+# Declares contracts this team depends on from other teams,
+# and contracts this team exposes to other teams.
+# Lives at teams/{team}/dependencies.yaml in the accord-hub repository.
+
+version: "1.0"
+
+team: zliu
+  # Team name (must match entry in root accord.yaml)
+
+# Contracts this team consumes from other teams
+depends_on: []
+  # - team: platform-team
+  #   contract: auth-api.yaml
+  #   used_by:             # optional: which of our services use it
+  #     - user-service
+  #     - admin-service
+  #   version: ">=1.2.0"   # optional: version constraint
+  #
+  # - team: data-team
+  #   contract: analytics-events.yaml
+  #   used_by:
+  #     - event-processor
+
+# Contracts this team exposes for other teams to consume
+# exposes:
+#   - contract: device-api.yaml
+#     consumers:           # optional: known consumers
+#       - platform-team
+#       - mobile-team
