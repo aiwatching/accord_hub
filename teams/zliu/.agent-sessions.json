@@ -5,5 +5,12 @@
     "createdAt": 1771056349023,
     "requestCount": 2,
     "lastUsedAt": 1771056551769
+  },
+  "frontend": {
+    "sessionId": "a8615788-f916-4ac5-9c2b-69329725f758",
+    "serviceName": "frontend",
+    "createdAt": 1771056577477,
+    "requestCount": 1,
+    "lastUsedAt": 1771056577477
   }
 }
