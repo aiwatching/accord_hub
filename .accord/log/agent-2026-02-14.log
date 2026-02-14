@@ -37,3 +37,100 @@ fatal: not a git repository (or any of the parent directories): .git
 [accord-agent] 2026-02-14 03:55:39 [INFO] WebSocket client disconnected
 [accord-agent] 2026-02-14 03:55:53 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
 [accord-agent] 2026-02-14 03:55:53 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 03:55:53 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 03:55:53 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:55:53 [INFO] Dispatching: 5 pending request(s)
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: processing req-004-cmd-check-inbox for device-manager
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: command fast-path "check-inbox" for req-004-cmd-check-inbox
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: processing req-005-cmd-check-inbox for web-server
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: command fast-path "check-inbox" for req-005-cmd-check-inbox
+[accord-agent] 2026-02-14 03:55:53 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: processing req-006-cmd-check-inbox for frontend
+[accord-agent] 2026-02-14 03:55:53 [INFO] Worker 0: command fast-path "check-inbox" for req-006-cmd-check-inbox
+[accord-agent] 2026-02-14 03:55:53 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:55:53 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 03:55:54 [WARN] Sync push failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh push --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:55:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:56 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:56 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:56 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:58 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:55:58 [INFO] Server stopped
+[accord-agent] 2026-02-14 03:56:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:06 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:06 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:10 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:56:14 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:14 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:23 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:56:23 [INFO] Dispatching: 2 pending request(s)
+[accord-agent] 2026-02-14 03:56:23 [INFO] Worker 0: processing req-000-service-joined-device-manager for web-server
+[accord-agent] 2026-02-14 03:56:24 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:56:24 [INFO] Worker 0: processing req-000-service-joined-device-manager for frontend
+[accord-agent] 2026-02-14 03:56:24 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
+[accord-agent] 2026-02-14 03:56:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:56:28 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:14 [INFO] [claude-code] Completed: 10 turns, $0.3514
+[accord-agent] 2026-02-14 03:57:15 [ERROR] Worker 0: agent failed for req-000-service-joined-device-manager: Error: ENOENT: no such file or directory, open '/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/frontend/req-000-service-joined-device-manager.md'
+[accord-agent] 2026-02-14 03:57:15 [ERROR] Worker 0: unexpected error processing req-000-service-joined-device-manager: Error: ENOENT: no such file or directory, open '/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/frontend/req-000-service-joined-device-manager.md'
+[accord-agent] 2026-02-14 03:57:25 [INFO] [claude-code] Completed: 14 turns, $0.3889
+[accord-agent] 2026-02-14 03:57:26 [WARN] Git commit failed: Error: Command failed: git add -A
+fatal: not a git repository (or any of the parent directories): .git
+
