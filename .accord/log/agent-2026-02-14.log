@@ -1,2 +1,19 @@
-[accord-agent] 2026-02-14 04:55:04 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
-[accord-agent] 2026-02-14 04:55:04 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 08:03:24 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 08:03:24 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 08:03:24 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 08:03:25 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 08:03:25 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:26 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:26 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:27 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:27 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:29 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:29 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:29 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:31 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:32 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:03:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 08:04:09 [INFO] [session] Orchestrator message: frontend 没有页面我需要他开发一些页面出来，先把简单的 device 列表页面...
