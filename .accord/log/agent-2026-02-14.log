@@ -134,3 +134,568 @@ fatal: not a git repository (or any of the parent directories): .git
 [accord-agent] 2026-02-14 03:57:26 [WARN] Git commit failed: Error: Command failed: git add -A
 fatal: not a git repository (or any of the parent directories): .git
 
+[accord-agent] 2026-02-14 03:57:26 [WARN] Sync push failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh push --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:57:53 [INFO] Shutting down...
+[accord-agent] 2026-02-14 03:57:53 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:57:53 [INFO] Server stopped
+[accord-agent] 2026-02-14 03:58:11 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 03:58:11 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 03:58:11 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 03:58:11 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:58:11 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:14 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:14 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:22 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:23 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:24 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:58:24 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:58:24 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:24 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 03:58:41 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:59:11 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 03:59:39 [INFO] Shutting down...
+[accord-agent] 2026-02-14 03:59:39 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 03:59:39 [INFO] Server stopped
+[accord-agent] 2026-02-14 04:00:14 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:00:14 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 04:00:14 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 04:00:15 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:00:15 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 04:00:15 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:15 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:15 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:16 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:16 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:18 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:18 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:18 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:18 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:19 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:35 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:35 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:40 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:40 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:41 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:41 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:45 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:00:48 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:48 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:49 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:49 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:52 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:52 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:52 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:53 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:00:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:00:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:01:15 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:01:45 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:02:15 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:02:45 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:03:15 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:03:45 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:03:55 [INFO] Shutting down...
+[accord-agent] 2026-02-14 04:03:55 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:03:55 [INFO] Server stopped
+[accord-agent] 2026-02-14 04:05:02 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:05:02 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 04:05:02 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 04:05:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:05:02 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 04:05:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:05 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:05 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:05 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:05 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:25 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:25 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:30 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:30 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:31 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:31 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:31 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:31 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:05:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:38 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:38 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:49 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:49 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:56 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:56 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:05:56 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:05:57 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:06:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:06:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:07:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:07:07 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:07 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:12 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:12 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:07:43 [INFO] Shutting down...
+[accord-agent] 2026-02-14 04:07:43 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 04:07:43 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:43 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:43 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:43 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:43 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:07:54 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:07:54 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 04:07:54 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 04:07:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:07:54 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:07:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:08:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:08:07 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:08:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:08:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:08:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:08:10 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:08:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:08:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:09:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:09:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:10:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:10:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:11:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:11:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:12:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:12:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:13:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:13:24 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:13:24 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:13:28 [INFO] [session] Orchestrator message: test...
+[accord-agent] 2026-02-14 04:13:41 [INFO] [claude-code] Completed: 5 turns, $0.2097
+[accord-agent] 2026-02-14 04:13:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:14:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:14:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:15:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:15:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:16:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:16:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:17:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:17:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:18:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:18:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:19:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:19:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:20:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:20:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:21:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:21:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:22:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:22:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:23:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:23:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:24:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:24:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:25:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:25:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:26:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:26:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:27:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:27:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:28:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:28:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:29:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:29:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:30:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:30:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:31:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:31:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:32:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:32:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:33:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:33:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:34:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:34:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:35:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:35:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:36:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:36:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:37:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:37:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:38:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:38:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:39:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:39:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:40:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:40:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:41:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:41:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:42:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:42:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:43:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:43:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:44:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:44:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:45:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:45:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:46:25 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:46:54 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:47:24 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:47:27 [INFO] Shutting down...
+[accord-agent] 2026-02-14 04:47:27 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:47:27 [INFO] Server stopped
+[accord-agent] 2026-02-14 04:47:40 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-14 04:47:40 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:47:40 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 04:47:40 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 04:47:40 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:47:40 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 04:47:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:43 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:47:43 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:00 [INFO] Shutting down...
+[accord-agent] 2026-02-14 04:48:00 [INFO] Scheduler stopped
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-14 04:48:02 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-14 04:48:02 [INFO] Dispatcher initialized: 4 workers, agent=claude-code
+[accord-agent] 2026-02-14 04:48:02 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-14 04:48:02 [INFO] Scheduler started — polling every 30s
+[accord-agent] 2026-02-14 04:48:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:48:02 [INFO] Accord Hub Service started — port 3000, 4 workers, poll every 30s
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:48:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:49:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:49:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:50:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:50:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:51:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:51:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:52:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:52:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:53:02 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:53:32 [WARN] Sync pull failed: Error: Command failed: bash /Users/zliu/.accord/accord-sync.sh pull --target-dir /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+[accord-sync] ERROR: Config not found: /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/.accord/config.yaml — run 'accord init' first
+
+[accord-agent] 2026-02-14 04:53:35 [INFO] WebSocket client connected
+[accord-agent] 2026-02-14 04:53:35 [INFO] WebSocket client connected

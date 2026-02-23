@@ -5,9 +5,9 @@ to: web-server
 scope: external
 type: command
 priority: high
-status: completed
+status: failed
 created: 2026-02-23T10:40:00.000Z
-updated: '2026-02-23T19:16:30.000Z'
+updated: '2026-02-23T19:17:57.821Z'
 on_behalf_of: user
 command: start
 command_args: ''
