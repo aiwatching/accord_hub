@@ -7,7 +7,7 @@ type: interface-addition
 priority: medium
 status: completed
 created: 2026-02-23T12:00:00.000Z
-updated: '2026-02-23T16:30:00.000Z'
+updated: '2026-02-24T00:27:30.734Z'
 on_behalf_of: user
 related_contract: contracts/internal/device-manager.md
 ---

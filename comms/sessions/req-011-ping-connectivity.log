@@ -747,3 +747,142 @@ The file /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/devi
 
 [Bash] cp /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md /Users/zliu/IdeaProjects/multi-repo-project/device-manager/comms/archive/req-011-ping-connectivity.md
 
+[thinking] Perfect! Now I need to commit all the changes. Let me do a git status to see what files have been modified/added:...
+
+[Bash] git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .accord/hub (new commits)
+	modified:   .accord/registry/device-manager.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.accord/comms/inbox/device-manager/req-008-add-device-creation.md
+	.accord/contracts/internal/
+	comms/archive/req-008-add-device-creation.md
+	comms/archive/req-011-ping-connectivity.md
+	src/main/java/com/example/devicemanager/exception/
+	src/main/java/com/example/devicemanager/model/PingResult.java
+	src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java
+	src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[thinking] I see several files to add. I need to add all the files related to the ping connectivity feature. Let me stage the changes:
+
+- The new exception classes
+- The new PingResult model
+- The new DeviceConnectivityService interface and implementation
+- The internal contract document
+- The updated registry
+- The archived request
+
+I'll avoid adding the hub changes and the other request file (req-008) as those are not part of this task....
+
+[Bash] git add src/main/java/com/example/devicemanager/exception/ src/main/java/com/example/devicemanager/model/PingResult.java src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java .accord/contracts
+
+
+[Bash] git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .accord/contracts/internal/device-manager.md
+	modified:   .accord/registry/device-manager.md
+	new file:   comms/archive/req-011-ping-connectivity.md
+	new file:   src/main/java/com/example/devicemanager/exception/DeviceNotFoundException.java
+	new file:   src/main/java/com/example/devicemanager/exception/InvalidIpAddressException.java
+	new file:   src/main/java/com/example/devicemanager/model/PingResult.java
+	new file:   src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java
+	new file:   src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .accord/hub (new commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.accord/comms/inbox/device-manager/req-008-add-device-creation.md
+	comms/archive/req-008-add-device-creation.md
+[thinking] Perfect! Now I'll commit all these changes with a descriptive commit message following the Accord protocol format:...
+
+[Bash] git commit -m "$(cat <<'EOF'
+accord: completed req-011-ping-connectivity - added device ping connectivity service
+
+Implemented device connectivity testing functionality:
+- Created DeviceConnectivityService interface with pingDevice and pingDevices methods
+- Implemented DeviceConnectivityServiceImpl 
+[main 2fd3a7b] accord: completed req-011-ping-connectivity - added device ping connectivity service
+ 8 files changed, 431 insertions(+), 9 deletions(-)
+ create mode 100644 .accord/contracts/internal/device-manager.md
+ create mode 100644 comms/archive/req-011-ping-connectivity.md
+ create mode 100644 src/main/java/com/example/devicemanager/exception/DeviceNotFoundException.java
+ create mode 100644 src/main/java/com/example/devicemanager/exception/InvalidIpAddressException.java
+ create mode 100644 src/main/java/com/example/devicemanager/model/PingResult.java
+ create mode 100644 src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java
+ create mode 100644 src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java
+[thinking] Excellent! The commit has been successfully created. Now let me verify the implementation by checking the git log:...
+
+[Bash] git log --oneline -3
+2fd3a7b accord: completed req-011-ping-connectivity - added device ping connectivity service
+4e2f56b accord: command "check-inbox" completed for req-004-cmd-check-inbox
+df1c508 accord: command "scan" completed for req-001-cmd-scan
+[thinking] Perfect! The request has been successfully implemented. Let me summarize what I did:
+
+1. Created exception classes:
+   - DeviceNotFoundException
+   - InvalidIpAddressException
+
+2. Created the PingResult model class with all required fields
+
+3. Created the DeviceConnectivityService interface with:
+   - pingDevice(String deviceId) method
+   - pingDevices(List<String> deviceIds) method
+
+4. Created DeviceConnectivityServiceImpl implementation with:
+   - ICMP ping testing using InetAddress.isReachabl...
+## Request Completed Successfully! ✓
+
+I've successfully implemented the device ping connectivity testing feature for the device-manager service. Here's what was created:
+
+### New Components
+
+1. **Exception Classes** (`exception/`)
+   - `DeviceNotFoundException` - thrown when device ID doesn't exist
+   - `InvalidIpAddressException` - thrown when device has no IP configured
+
+2. **Model Class** (`model/PingResult.java`)
+   - Captures ping test results with latency, packet loss, timestamps, and error details
+
+3. **Service Interface** (`service/DeviceConnectivityService.java`)
+   - `pingDevice(String deviceId)` - single device ping test
+   - `pingDevices(List<String> deviceIds)` - batch ping test
+
+4. **Service Implementation** (`service/DeviceConnectivityServiceImpl.java`)
+   - Uses `InetAddress.isReachable()` for ICMP ping
+   - Sends 4 packets with 5-second timeout per packet
+   - Calculates average latency and packet loss percentage
+   - Thread pool (10 threads) for parallel batch execution
+   - Graceful error handling with detailed error messages
+
+### Documentation Updates
+
+- Created internal contract at `.accord/contracts/internal/device-manager.md`
+- Updated `.accord/registry/device-manager.md` with new capabilities
+- Archived completed request to `comms/archive/req-011-ping-connectivity.md`
+
+### Implementation Highlights
+
+- **Thread-safe**: Uses ExecutorService for concurrent operations
+- **Non-blocking**: Batch operations run in parallel
+- **Error resilient**: Failed pings return PingResult with error details instead of throwing
+- **Performance**: 10-thread pool prevents serial blocking on batch tests
+
+All changes have been committed with message:
+```
+accord: completed req-011-ping-connectivity - added device ping connectivity service
+```
+
+The request status has been updated to "completed" in the hub. As instructed, I have NOT pushed to the remote repository.
+--- completed | 195635ms ---

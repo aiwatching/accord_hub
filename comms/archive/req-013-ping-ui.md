@@ -5,9 +5,9 @@ to: frontend
 scope: external
 type: api-addition
 priority: medium
-status: in-progress
+status: completed
 created: 2026-02-23T12:00:00.000Z
-updated: '2026-02-24T00:24:49.927Z'
+updated: '2026-02-24T00:27:33.744Z'
 on_behalf_of: user
 related_contract: contracts/frontend.yaml
 ---

@@ -1103,3 +1103,82 @@ no changes added to commit (use "git add" and/or "git commit -a")
 To https://github.com/aiwatching/accord_hub
    cfa4c48..7e5a61c  main -> main
 [thinking] 完美！所有请求都已经创建、记录历史、提交并推送到远程仓库了。让我给用户一个总结。...
+## ✅ 任务分解完成
+
+我已经根据你的需求创建了 **6 个开发请求**，涵盖设备连通性测试和 SSH 直连调试两大功能：
+
+---
+
+### 📊 功能 1: 设备连通性测试 (Ping)
+
+#### **req-011-ping-connectivity** → device-manager
+- **目标**: 实现 Ping 测试核心逻辑
+- **功能**: 
+  - 单设备和批量 Ping 测试
+  - 返回延迟、丢包率等详细信息
+  - 异步执行，避免阻塞
+- **状态**: ✅ in-progress (已开始处理)
+
+#### **req-012-ping-api** → web-server
+- **目标**: 提供 Ping 测试 REST API
+- **API 端点**:
+  - `POST /api/devices/{id}/ping` - 单设备测试
+  - `POST /api/devices/ping/batch` - 批量测试(最多50个)
+- **状态**: ✅ completed (已完成)
+
+#### **req-013-ping-ui** → frontend
+- **目标**: 设备列表页添加连通性测试按钮
+- **功能**:
+  - 单设备测试按钮 + 实时状态显示
+  - 批量测试功能 + 结果对话框
+  - 显示延迟时间和连通状态
+- **状态**: ✅ in-progress (已开始处理)
+
+---
+
+### 🖥️ 功能 2: SSH 直连调试
+
+#### **req-014-ssh-connection** → device-manager
+- **目标**: 实现 SSH 连接管理
+- **功能**:
+  - SSH 会话创建、命令发送、输出接收
+  - 支持密码和私钥认证
+  - 会话管理和超时控制
+- **状态**: ⏳ pending
+
+#### **req-015-ssh-websocket** → web-server
+- **目标**: 提供 SSH WebSocket API
+- **功能**:
+  - WebSocket 端点 `/ws/ssh/{deviceId}`
+  - 双向实时通信协议
+  - 会话管理 REST API
+- **状态**: ⏳ pending
+
+#### **req-016-ssh-terminal** → frontend
+- **目标**: 创建 SSH 终端模拟器界面
+- **功能**:
+  - 集成 xterm.js 终端模拟器
+  - SSH 凭据输入对话框
+  - WebSocket 双向通信
+  - 会话管理和日志保存
+- **状态**: ⏳ pending
+
+---
+
+### 📝 已完成操作
+
+- ✅ 创建 6 个详细的请求文件
+- ✅ 记录历史到 `comms/history/2026-02-24-orchestrator.jsonl`
+- ✅ Git 提交: `7e5a61c`
+- ✅ 推送到远程仓库
+
+---
+
+### 🔄 下一步
+
+这些请求现在位于各服务的收件箱中，服务 agent 会按优先级处理：
+1. **Ping 功能** (medium priority) - 已有 3 个服务在处理
+2. **SSH 功能** (high priority) - 等待处理
+
+如果你运行了 accord daemon，它会自动分发这些请求给对应的服务 agent 进行实现！
+--- completed | 192191ms ---
