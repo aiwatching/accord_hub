@@ -1,0 +1,6 @@
+{"ts":"2026-02-24T00:26:12Z","request_id":"req-011-ping-connectivity","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created device-manager request for ping connectivity test"}
+{"ts":"2026-02-24T00:26:12Z","request_id":"req-012-ping-api","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created web-server request for ping API"}
+{"ts":"2026-02-24T00:26:12Z","request_id":"req-013-ping-ui","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created frontend request for ping UI in device list"}
+{"ts":"2026-02-24T00:26:16Z","request_id":"req-014-ssh-connection","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created device-manager request for SSH connection management"}
+{"ts":"2026-02-24T00:26:17Z","request_id":"req-015-ssh-websocket","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created web-server request for SSH WebSocket API"}
+{"ts":"2026-02-24T00:26:17Z","request_id":"req-016-ssh-terminal","from_status":"none","to_status":"pending","actor":"orchestrator","detail":"Created frontend request for SSH terminal emulator"}
