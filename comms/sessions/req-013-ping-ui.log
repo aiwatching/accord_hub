@@ -1,0 +1,496 @@
+--- local | frontend | 2026-02-24T00:24:49.923Z ---
+[REQUEST] req-013-ping-ui
+[thinking] Let me analyze this request carefully:
+
+1. **Request Details**:
+   - ID: req-013-ping-ui
+   - From: orchestrator
+   - To: frontend
+   - Type: api-addition
+   - Scope: external
+   - Priority: medium
+   - Status: (need to check the file)
+
+2. **What's being requested**:
+   - Add device connectivity testing (ping) functionality to the device list page
+   - UI should show ping status for individual devices
+   - Support batch ping testing for multiple devices
+   - Display results with latency, reachab...
+I'll help you implement the ping UI functionality for the frontend service. Let me start by reading the request file and understanding the current codebase structure.
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/frontend/req-013-ping-ui.md
+     1→---
+     2→id: req-013-ping-ui
+     3→from: orchestrator
+     4→to: frontend
+     5→scope: external
+     6→type: api-addition
+     7→priority: medium
+     8→status: in-progress
+     9→created: 2026-02-23T12:00:00.000Z
+    10→updated: '2026-02-24T00:24:49.927Z'
+    11→on_behalf_of: user
+    12→related_contract: contracts/frontend.yaml
+    13→---
+    14→
+    15→## What
+    16→
+    17→在设备列表页添加设备连通性测试功能，让用户可以快速测试设备是否在线。
+    18→
+    19→## Proposed Change
+    20→
+    21→在 frontend 的设备列表页面添加 Ping 测试功能：
+    22→
+    23→### 1. UI 改动
+    24→
+    25→**设备列表页 - 每行添加操作按钮**:
+    26→```typescript
+    27→// 在设备列表的操作列添加"测试连通性"按钮
+    28→<Button
+    29→  icon={<NetworkIcon />}
+    30→  size="small"
+    31→  onClick={() => handlePingDevice(device.id)}
+    32→  loading={pingLoading[device.id]}
+    33→>
+    34→  测试连通性
+    35→</Button>
+    36→```
+    37→
+    38→**批量测试功能**:
+    39→```typescript
+    40→// 在列表顶部工具栏添加批量测试按钮
+    41→<Button
+    42→  icon={<NetworkCheckIcon />}
+    43→  onClick={handleBatchPing}
+    44→  disabled={selectedDevices.length === 0}
+    45→>
+    46→  批量测试 ({selectedDevices.length})
+    47→</Button>
+    48→```
+    49→
+    50→**测试结果显示**:
+    51→- 单设备测试:
+    52→  - 在设备行内显示实时状态图标
+    53→  - 成功: ✅ 绿色勾 + 延迟时间 (如 "12ms")
+    54→  - 失败: ❌ 红色叉 + "不可达"
+    55→  - 测试中: ⏳ 加载动画
+    56→
+    57→- 批量测试:
+    58→  - 打开模态对话框显示测试进度和结果
+    59→  - 显示统计信息: 总数/可达/不可达
+    60→  - 可以导出测试结果为 CSV
+    61→
+    62→### 2. API 调用
+    63→
+    64→```typescript
+    65→// 单设备 Ping 测试
+    66→interface PingResult {
+    67→  deviceId: string;
+    68→  ipAddress: string;
+    69→  reachable: boolean;
+    70→  latencyMs: number | null;
+    71→  packetsTransmitted: number;
+    72→  packetsReceived: number;
+    73→  packetLoss: number;
+    74→  testedAt: string;
+    75→  errorMessage?: string;
+    76→}
+    77→
+    78→const pingDevice = async (deviceId: string): Promise<PingResult> => {
+    79→  const response = await fetch(`/api/devices/${deviceId}/ping`, {
+    80→    method: 'POST',
+    81→    headers: {
+  
+... (truncated)
+
+[Glob] **/*.java in /Users/zliu/IdeaProjects/multi-repo-project/frontend/src
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/PageData.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/FrontendApplication.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/DeviceStatus.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/PaginatedResponse.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/PluginProtocol.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/Plugin.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/Device.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/DeviceMockDataProvider.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/User.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/SystemConfig.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java
+/Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java
+
+[Glob] **/*.html in /Users/zliu/IdeaProjects/multi-repo-project/frontend/src
+No files found
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/.accord/config.yaml
+     1→version: "0.1"
+     2→project:
+     3→  name: demo-project
+     4→
+     5→repo_model: multi-repo
+     6→hub: https://github.com/aiwatching/accord_hub
+     7→
+     8→services:
+     9→  - name: device-manager
+    10→  - name: web-server
+    11→  - name: frontend
+    12→
+    13→settings:
+    14→  sync_mode: on-action
+    15→  auto_pull_on_start: true
+    16→  require_human_approval: true
+    17→  archive_completed: true
+    18→  debug: false
+    19→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Good, I can see:
+
+1. The request status is "in-progress" - so it's ready for me to implement
+2. This is a Spring Boot Java application (not TypeScript/React as mentioned in the request spec)
+3. The frontend uses Thymeleaf templates (HTML files) since I found Java controllers and models but no HTML files yet
+
+Let me explore the current structure to understand:
+- The PageController to see what pages exist
+- The device list page HTML template
+- The WebServerClient to understand how API calls are ma...
+Let me explore the current frontend structure to understand how it's built:
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java
+     1→package com.example.frontend.controller;
+     2→
+     3→import com.example.frontend.model.Device;
+     4→import com.example.frontend.model.PageData;
+     5→import com.example.frontend.model.PaginatedResponse;
+     6→import com.example.frontend.model.SystemConfig;
+     7→import com.example.frontend.model.User;
+     8→import com.example.frontend.service.WebServerClient;
+     9→import org.springframework.http.ResponseEntity;
+    10→import org.springframework.web.bind.annotation.GetMapping;
+    11→import org.springframework.web.bind.annotation.RequestMapping;
+    12→import org.springframework.web.bind.annotation.RequestParam;
+    13→import org.springframework.web.bind.annotation.RestController;
+    14→
+    15→import java.util.LinkedHashMap;
+    16→import java.util.List;
+    17→import java.util.Map;
+    18→
+    19→@RestController
+    20→@RequestMapping("/api/pages")
+    21→public class PageController {
+    22→
+    23→    private final WebServerClient webServerClient;
+    24→
+    25→    public PageController(WebServerClient webServerClient) {
+    26→        this.webServerClient = webServerClient;
+    27→    }
+    28→
+    29→    @GetMapping("/dashboard")
+    30→    public ResponseEntity<PageData> getDashboardPage() {
+    31→        Map<String, Object> data = new LinkedHashMap<>();
+    32→        data.put("stats", webServerClient.getDashboardStats());
+    33→        data.put("recentDevices", webServerClient.getDashboardDevices());
+    34→        return ResponseEntity.ok(new PageData("Dashboard", data));
+    35→    }
+    36→
+    37→    @GetMapping("/devices/search")
+    38→    public ResponseEntity<PageData> searchDevices(
+    39→            @RequestParam String q,
+    40→            @RequestParam(defaultValue = "0") int page,
+    41→            @RequestParam(defaultValue = "20") int size) {
+    42→        PaginatedResponse<Device> results = webServerClient.searchDevices(q, page, size);
+    43→        return ResponseEntity.ok(new PageData("Device Search", results));
+ 
+... (truncated)
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java
+     1→package com.example.frontend.service;
+     2→
+     3→import com.example.frontend.model.Device;
+     4→import com.example.frontend.model.DeviceStatus;
+     5→import com.example.frontend.model.PaginatedResponse;
+     6→import com.example.frontend.model.Plugin;
+     7→import com.example.frontend.model.PluginProtocol;
+     8→import com.example.frontend.model.SystemConfig;
+     9→import com.example.frontend.model.User;
+    10→import org.springframework.stereotype.Service;
+    11→import org.springframework.web.client.RestTemplate;
+    12→import org.springframework.web.util.UriComponentsBuilder;
+    13→
+    14→import java.time.Instant;
+    15→import java.util.ArrayList;
+    16→import java.util.Collections;
+    17→import java.util.LinkedHashMap;
+    18→import java.util.List;
+    19→import java.util.Map;
+    20→
+    21→@Service
+    22→public class WebServerClient {
+    23→
+    24→    private final RestTemplate restTemplate;
+    25→    private final String webServerUrl;
+    26→
+    27→    public WebServerClient() {
+    28→        this.restTemplate = new RestTemplate();
+    29→        // In production, this would come from configuration
+    30→        this.webServerUrl = "http://localhost:8080";
+    31→    }
+    32→
+    33→    public Object getDashboardStats() {
+    34→        try {
+    35→            return restTemplate.getForObject(
+    36→                    webServerUrl + "/api/dashboard/stats", Object.class);
+    37→        } catch (Exception e) {
+    38→            return Collections.singletonMap("error", "web-server unavailable");
+    39→        }
+    40→    }
+    41→
+    42→    @SuppressWarnings("unchecked")
+    43→    public Object getDashboardDevices() {
+    44→        try {
+    45→            return restTemplate.getForObject(
+    46→                    webServerUrl + "/api/dashboard/devices", Object[].class);
+    47→        } catch (Exception e) {
+    48→            return Collections.emptyList();
+    49→        }
+    50→    }
+    51→
+    52→    public Pagina
+... (truncated)
+
+[Glob] **/*.html in /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/resources
+No files found
+[thinking] I see! This is a REST API-only frontend service. Looking at the structure:
+
+1. **PageController** - Returns JSON data with PageData objects
+2. **WebServerClient** - Makes REST calls to web-server (port 8080)
+3. No HTML templates - this is a pure API service
+
+So the "frontend" service is actually a BFF (Backend For Frontend) that:
+- Exposes page data APIs
+- Proxies calls to web-server
+- Returns JSON responses
+
+The actual UI rendering would be done by a separate client (maybe a React/Vue app not i...
+Let me check the web-server contract to understand the ping APIs available:
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/.accord/contracts/web-server.yaml
+File does not exist. Note: your current working directory is /Users/zliu/IdeaProjects/multi-repo-project/frontend.
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/Device.java
+<tool_use_error>Sibling tool call errored</tool_use_error>
+[thinking] Let me try the accord_hub location for the contracts:...
+
+[Glob] **/*.yaml in /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/contracts
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/contracts/device-manager.yaml
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/Device.java
+     1→package com.example.frontend.model;
+     2→
+     3→import java.time.Instant;
+     4→import java.util.ArrayList;
+     5→import java.util.List;
+     6→
+     7→public class Device {
+     8→
+     9→    private String id;
+    10→    private String name;
+    11→    private String ipAddress;
+    12→    private String macAddress;
+    13→    private DeviceStatus status;
+    14→    private Instant lastSeen;
+    15→    private List<Plugin> plugins;
+    16→
+    17→    public Device() {}
+    18→
+    19→    public Device(String id, String name, String ipAddress, String macAddress,
+    20→                  DeviceStatus status, Instant lastSeen) {
+    21→        this.id = id;
+    22→        this.name = name;
+    23→        this.ipAddress = ipAddress;
+    24→        this.macAddress = macAddress;
+    25→        this.status = status;
+    26→        this.lastSeen = lastSeen;
+    27→        this.plugins = new ArrayList<>();
+    28→    }
+    29→
+    30→    public Device(String id, String name, String ipAddress, String macAddress,
+    31→                  DeviceStatus status, Instant lastSeen, List<Plugin> plugins) {
+    32→        this.id = id;
+    33→        this.name = name;
+    34→        this.ipAddress = ipAddress;
+    35→        this.macAddress = macAddress;
+    36→        this.status = status;
+    37→        this.lastSeen = lastSeen;
+    38→        this.plugins = plugins != null ? plugins : new ArrayList<>();
+    39→    }
+    40→
+    41→    public String getId() { return id; }
+    42→    public void setId(String id) { this.id = id; }
+    43→
+    44→    public String getName() { return name; }
+    45→    public void setName(String name) { this.name = name; }
+    46→
+    47→    public String getIpAddress() { return ipAddress; }
+    48→    public void setIpAddress(String ipAddress) { this.ipAddress = ipAddress; }
+    49→
+    50→    public String getMacAddress() { return macAddress; }
+    51→    public void setMacAddress(String macAddress) { this.macAddress = macAddress; }
+    5
+... (truncated)
+[thinking] Let me check if there's a web-server contract in the hub:...
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/contracts/
+
+[Grep] /ping/ in /Users/zliu/IdeaProjects/multi-repo-project/accord_hub
+No files found
+total 8
+drwxr-xr-x@  5 zliu  staff   160 Feb 23 10:30 .
+drwxr-xr-x@ 13 zliu  staff   416 Feb 23 10:30 ..
+-rw-r--r--@  1 zliu  staff     0 Feb 23 10:30 .gitkeep
+-rw-r--r--@  1 zliu  staff  1949 Feb 23 10:30 device-manager.yaml
+drwxr-xr-x@  2 zliu  staff    64 Feb 11 22:01 internal
+[thinking] I see - there's no web-server contract yet in the hub. Let me check the request more carefully. The request says:
+
+"依赖 web-server 的 ping API"
+
+So it depends on web-server's ping API. Let me check if there are any related requests about the ping API being created first. Let me also check the comms directory to see if there are related requests:...
+
+[Bash] find /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms -name "*.md" -type f | head -20
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/TEMPLATE.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-014-ssh-connection.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/frontend/req-013-ping-ui.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-015-ssh-websocket.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-012-ping-api.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-006-start-service.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/PROTOCOL.md
+
+[Grep] /ping/ in /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms
+Found 4 files
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-015-ssh-websocket.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/frontend/req-013-ping-ui.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-012-ping-api.md
+/Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md
+[thinking] Perfect! I can see there are related ping requests:- req-011-ping-connectivity.md (device-manager) - probably implements the actual ping logic
+- req-012-ping-api.md (web-server) - exposes the ping API
+- req-013-ping-ui.md (frontend) - this request I'm working on
+
+Let me read the web-server ping API request to understand what API will be available:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/web-server/req-012-ping-api.md
+     1→---
+     2→id: req-012-ping-api
+     3→from: orchestrator
+     4→to: web-server
+     5→scope: external
+     6→type: api-addition
+     7→priority: medium
+     8→status: in-progress
+     9→created: 2026-02-23T12:00:00.000Z
+    10→updated: '2026-02-24T00:24:29.923Z'
+    11→on_behalf_of: user
+    12→related_contract: contracts/web-server.yaml
+    13→---
+    14→
+    15→## What
+    16→
+    17→提供设备 Ping 连通性测试的 REST API 端点。
+    18→
+    19→## Proposed Change
+    20→
+    21→在 web-server 中添加 Ping 测试 API：
+    22→
+    23→```yaml
+    24→paths:
+    25→  /api/devices/{id}/ping:
+    26→    post:
+    27→      summary: 测试单个设备连通性
+    28→      description: 执行 Ping 测试检查设备是否在线
+    29→      security:
+    30→        - BearerAuth: []
+    31→      parameters:
+    32→        - name: id
+    33→          in: path
+    34→          required: true
+    35→          schema:
+    36→            type: string
+    37→          description: 设备ID
+    38→      responses:
+    39→        200:
+    40→          description: Ping 测试成功
+    41→          content:
+    42→            application/json:
+    43→              schema:
+    44→                type: object
+    45→                properties:
+    46→                  deviceId:
+    47→                    type: string
+    48→                    example: "dev-1234567890"
+    49→                  ipAddress:
+    50→                    type: string
+    51→                    example: "192.168.1.1"
+    52→                  reachable:
+    53→                    type: boolean
+    54→                    example: true
+    55→                  latencyMs:
+    56→                    type: number
+    57→                    example: 12.5
+    58→                    description: 平均延迟(毫秒), null表示不可达
+    59→                  packetsTransmitted:
+    60→                    type: integer
+    61→                    example: 4
+    62→                  packetsReceived:
+    63→                    type: integer
+    64→                    example: 4
+    65→                  packetLo
+... (truncated)
+[thinking] Perfect! Now I understand the full picture:1. **web-server** will provide:   - `POST /api/devices/{id}/ping` - single device ping   - `POST /api/devices/ping/batch` - batch ping
+
+2. **frontend** (this service) needs to:   - Add API endpoints that proxy to web-server's ping APIs   - Return the data in a format suitable for the UI client
+
+Now I can implement the ping functionality in the frontend service. I need to:
+
+1. Create a `PingResult` model class
+2. Create a `BatchPingResult` model class
+3....
+Now I understand the full context. The frontend service needs to expose ping endpoints that proxy to web-server's ping APIs. Let me implement this functionality:
+[TodoWrite] {"todos":[{"content":"Create PingResult model class","activeForm":"Creating PingResult model class","status":"in_progress"},{"content":"Create BatchPingResult model class","activeForm":"Creating Batch
+Todos have been modified successfully. Ensure that you continue to use the todo list to track your progress. Please proceed with the current tasks if applicable
+[thinking] Good, now let me create the PingResult model class:...
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/PingResult.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/PingResult.java
+[thinking] Good! Now let me update the todo and create the BatchPingResult model:...
+
+[TodoWrite] {"todos":[{"content":"Create PingResult model class","activeForm":"Creating PingResult model class","status":"completed"},{"content":"Create BatchPingResult model class","activeForm":"Creating BatchPi
+Todos have been modified successfully. Ensure that you continue to use the todo list to track your progress. Please proceed with the current tasks if applicable
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/BatchPingResult.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/model/BatchPingResult.java
+[thinking] Great! Now let me add the ping methods to WebServerClient:...
+
+[TodoWrite] {"todos":[{"content":"Create PingResult model class","activeForm":"Creating PingResult model class","status":"completed"},{"content":"Create BatchPingResult model class","activeForm":"Creating BatchPi
+Todos have been modified successfully. Ensure that you continue to use the todo list to track your progress. Please proceed with the current tasks if applicable
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java — "package com.example.frontend.service;
+
+import com.example.fr..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java has been updated successfully.
+[thinking] Now let me add the ping methods at the end of the WebServerClient class:...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java — "    public Map<String, Object> getAdminStats() {
+        try..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/service/WebServerClient.java has been updated successfully.
+[thinking] Good! Now let me add the ping endpoints to PageController:...
+
+[TodoWrite] {"todos":[{"content":"Create PingResult model class","activeForm":"Creating PingResult model class","status":"completed"},{"content":"Create BatchPingResult model class","activeForm":"Creating BatchPi
+Todos have been modified successfully. Ensure that you continue to use the todo list to track your progress. Please proceed with the current tasks if applicable
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java — "package com.example.frontend.controller;
+
+import com.example..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java has been updated successfully.
+[thinking] Now let me add the ping endpoints to the controller:...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java — "        return ResponseEntity.ok(new PageData("Admin Dashboa..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/frontend/src/main/java/com/example/frontend/controller/PageController.java has been updated successfully.
+[thinking] Perfect! Now I need to update the request status to "completed" and move it to the archive. Let me do that:...

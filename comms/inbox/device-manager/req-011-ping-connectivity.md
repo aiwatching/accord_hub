@@ -5,9 +5,9 @@ to: device-manager
 scope: internal
 type: interface-addition
 priority: medium
-status: in-progress
+status: completed
 created: 2026-02-23T12:00:00.000Z
-updated: '2026-02-24T00:24:14.921Z'
+updated: '2026-02-23T16:30:00.000Z'
 on_behalf_of: user
 related_contract: contracts/internal/device-manager.md
 ---

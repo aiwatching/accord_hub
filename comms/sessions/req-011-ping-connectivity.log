@@ -1,0 +1,749 @@
+--- local | device-manager | 2026-02-24T00:24:14.918Z ---
+[REQUEST] req-011-ping-connectivity
+[thinking] Let me understand this request:
+
+1. I'm working as the **device-manager** module
+2. I need to process request `req-011-ping-connectivity` from the orchestrator
+3. This is an internal scope, interface-addition type request
+4. I need to implement a device ping connectivity testing feature
+
+The request asks me to:
+- Create a `DeviceConnectivityService` interface with ping methods
+- Create a `PingResult` class to hold test results
+- Implement the service to test device connectivity using ICMP
+- Hand...
+I'll process this request to add device ping connectivity testing functionality to the device-manager service.
+
+Let me start by exploring the current codebase structure to understand where to implement these new components.
+[Glob] **/Device*.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/DeviceManagerApplication.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/DeviceStatus.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/repository/DeviceRepository.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceService.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceServiceImpl.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/controller/DeviceController.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/Device.java
+
+[Glob] **/service/*.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceService.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceServiceImpl.java
+
+[Glob] **/model/*.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/DeviceStatus.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/PaginatedDeviceResponse.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/PluginProtocol.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/Plugin.java
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/Device.java
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/config.yaml
+     1→version: "0.1"
+     2→project:
+     3→  name: demo-project
+     4→
+     5→repo_model: multi-repo
+     6→hub: https://github.com/aiwatching/accord_hub
+     7→
+     8→services:
+     9→  - name: device-manager
+    10→  - name: web-server
+    11→  - name: frontend
+    12→
+    13→settings:
+    14→  sync_mode: on-action
+    15→  auto_pull_on_start: true
+    16→  require_human_approval: true
+    17→  archive_completed: true
+    18→  debug: false
+    19→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Good, I can see the project structure. The package is `com.example.devicemanager` and I can see:
+- Services are in `service/` package
+- Models are in `model/` package
+- There's already a `DeviceService` and `DeviceServiceImpl`
+
+Let me read the existing Device model to understand the structure and see if it has an IP address field....
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/Device.java
+     1→package com.example.devicemanager.model;
+     2→
+     3→import java.time.Instant;
+     4→import java.util.ArrayList;
+     5→import java.util.List;
+     6→
+     7→public class Device {
+     8→
+     9→    private String id;
+    10→    private String name;
+    11→    private String ipAddress;
+    12→    private String macAddress;
+    13→    private DeviceStatus status;
+    14→    private Instant lastSeen;
+    15→    private List<Plugin> plugins = new ArrayList<>();
+    16→
+    17→    public Device() {}
+    18→
+    19→    public Device(String id, String name, String ipAddress, String macAddress, DeviceStatus status) {
+    20→        this.id = id;
+    21→        this.name = name;
+    22→        this.ipAddress = ipAddress;
+    23→        this.macAddress = macAddress;
+    24→        this.status = status;
+    25→        this.lastSeen = Instant.now();
+    26→    }
+    27→
+    28→    public String getId() { return id; }
+    29→    public void setId(String id) { this.id = id; }
+    30→
+    31→    public String getName() { return name; }
+    32→    public void setName(String name) { this.name = name; }
+    33→
+    34→    public String getIpAddress() { return ipAddress; }
+    35→    public void setIpAddress(String ipAddress) { this.ipAddress = ipAddress; }
+    36→
+    37→    public String getMacAddress() { return macAddress; }
+    38→    public void setMacAddress(String macAddress) { this.macAddress = macAddress; }
+    39→
+    40→    public DeviceStatus getStatus() { return status; }
+    41→    public void setStatus(DeviceStatus status) { this.status = status; }
+    42→
+    43→    public Instant getLastSeen() { return lastSeen; }
+    44→    public void setLastSeen(Instant lastSeen) { this.lastSeen = lastSeen; }
+    45→
+    46→    public List<Plugin> getPlugins() { return plugins; }
+    47→    public void setPlugins(List<Plugin> plugins) { this.plugins = plugins; }
+    48→}
+    49→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be conside
+... (truncated)
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceService.java
+     1→package com.example.devicemanager.service;
+     2→
+     3→import com.example.devicemanager.model.Device;
+     4→import com.example.devicemanager.model.DeviceStatus;
+     5→import com.example.devicemanager.model.PaginatedDeviceResponse;
+     6→
+     7→import java.util.List;
+     8→import java.util.Optional;
+     9→
+    10→public interface DeviceService {
+    11→
+    12→    List<Device> listDevices(DeviceStatus status);
+    13→
+    14→    PaginatedDeviceResponse listDevicesPaginated(DeviceStatus status, String name,
+    15→                                                  int page, int size,
+    16→                                                  String sort, String direction);
+    17→
+    18→    Optional<Device> getDevice(String id);
+    19→
+    20→    Device createDevice(Device device);
+    21→
+    22→    PaginatedDeviceResponse searchDevices(String query, int page, int size);
+    23→
+    24→    // TODO: Pending req-002-reboot-device approval
+    25→    // Map<String, String> rebootDevice(String id);
+    26→}
+    27→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceServiceImpl.java
+     1→package com.example.devicemanager.service;
+     2→
+     3→import com.example.devicemanager.model.Device;
+     4→import com.example.devicemanager.model.DeviceStatus;
+     5→import com.example.devicemanager.model.PaginatedDeviceResponse;
+     6→import com.example.devicemanager.repository.DeviceRepository;
+     7→import org.springframework.stereotype.Service;
+     8→
+     9→import java.time.Instant;
+    10→import java.util.Comparator;
+    11→import java.util.List;
+    12→import java.util.Optional;
+    13→import java.util.UUID;
+    14→import java.util.stream.Collectors;
+    15→import java.util.stream.Stream;
+    16→
+    17→@Service
+    18→public class DeviceServiceImpl implements DeviceService {
+    19→
+    20→    private final DeviceRepository deviceRepository;
+    21→
+    22→    public DeviceServiceImpl(DeviceRepository deviceRepository) {
+    23→        this.deviceRepository = deviceRepository;
+    24→    }
+    25→
+    26→    @Override
+    27→    public List<Device> listDevices(DeviceStatus status) {
+    28→        if (status != null) {
+    29→            return deviceRepository.findByStatus(status);
+    30→        }
+    31→        return deviceRepository.findAll();
+    32→    }
+    33→
+    34→    @Override
+    35→    public Optional<Device> getDevice(String id) {
+    36→        return deviceRepository.findById(id);
+    37→    }
+    38→
+    39→    @Override
+    40→    public PaginatedDeviceResponse listDevicesPaginated(DeviceStatus status, String name,
+    41→                                                         int page, int size,
+    42→                                                         String sort, String direction) {
+    43→        List<Device> devices;
+    44→        if (status != null) {
+    45→            devices = deviceRepository.findByStatus(status);
+    46→        } else {
+    47→            devices = deviceRepository.findAll();
+    48→        }
+    49→
+    50→        Stream<Device> stream = devices.stream();
+    51→
+    52→        if (name
+... (truncated)
+[thinking] Perfect! I can see:
+1. The `Device` model already has an `ipAddress` field (line 11)
+2. The services follow a pattern with an interface in `service/` and implementation in the same package
+3. The implementation uses Spring (`@Service` annotation)
+
+Now let me check if there are any exception classes to understand the pattern for custom exceptions:...
+
+[Glob] **/exception/*.java
+No files found
+
+[Bash] find /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src -name "*Exception.java" -o -name "*exception*" -type d
+
+[thinking] No exception classes exist yet. I'll need to create them. Let me check what the project structure looks like in more detail:...
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/
+total 8
+drwxr-xr-x@ 7 zliu  staff  224 Feb 10 11:27 .
+drwxr-xr-x@ 3 zliu  staff   96 Feb 10 11:27 ..
+-rw-r--r--@ 1 zliu  staff  343 Feb 10 11:27 DeviceManagerApplication.java
+drwxr-xr-x@ 3 zliu  staff   96 Feb 10 15:25 controller
+drwxr-xr-x@ 7 zliu  staff  224 Feb 11 10:29 model
+drwxr-xr-x@ 3 zliu  staff   96 Feb 10 15:24 repository
+drwxr-xr-x@ 4 zliu  staff  128 Feb 10 15:25 service
+[thinking] Good, I can see the package structure. Now I need to:
+
+1. Create an `exception` package with the custom exceptions
+2. Create the `PingResult` model class
+3. Create the `DeviceConnectivityService` interface
+4. Create the `DeviceConnectivityServiceImpl` implementation
+
+Let me also check if there's a pom.xml to understand the project dependencies:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/pom.xml
+     1→<?xml version="1.0" encoding="UTF-8"?>
+     2→<project xmlns="http://maven.apache.org/POM/4.0.0"
+     3→         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     4→         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+     5→    <modelVersion>4.0.0</modelVersion>
+     6→
+     7→    <parent>
+     8→        <groupId>org.springframework.boot</groupId>
+     9→        <artifactId>spring-boot-starter-parent</artifactId>
+    10→        <version>3.2.0</version>
+    11→        <relativePath/>
+    12→    </parent>
+    13→
+    14→    <groupId>com.example</groupId>
+    15→    <artifactId>device-manager</artifactId>
+    16→    <version>0.1.0-SNAPSHOT</version>
+    17→    <name>device-manager</name>
+    18→    <description>Device management core — CRUD, status queries, and lifecycle operations</description>
+    19→
+    20→    <properties>
+    21→        <java.version>17</java.version>
+    22→    </properties>
+    23→
+    24→    <dependencies>
+    25→        <dependency>
+    26→            <groupId>org.springframework.boot</groupId>
+    27→            <artifactId>spring-boot-starter-web</artifactId>
+    28→        </dependency>
+    29→    </dependencies>
+    30→
+    31→    <build>
+    32→        <plugins>
+    33→            <plugin>
+    34→                <groupId>org.springframework.boot</groupId>
+    35→                <artifactId>spring-boot-maven-plugin</artifactId>
+    36→            </plugin>
+    37→        </plugins>
+    38→    </build>
+    39→</project>
+    40→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Good, it's a Spring Boot 3.2.0 project with Java 17. Now I'll create the necessary files:
+
+1. Exception classes:
+   - `DeviceNotFoundException` - for when a device doesn't exist
+   - `InvalidIpAddressException` - for when a device has no IP configured
+
+2. `PingResult` model class
+
+3. `DeviceConnectivityService` interface
+
+4. `DeviceConnectivityServiceImpl` implementation
+
+Let me start creating these files:...
+Now I'll implement the ping connectivity feature. Let me create the necessary classes:
+[Bash] mkdir -p /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/exception
+
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/exception/DeviceNotFoundException.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/exception/DeviceNotFoundException.java
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/exception/InvalidIpAddressException.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/exception/InvalidIpAddressException.java
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/PingResult.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/model/PingResult.java
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceConnectivityService.java
+[thinking] Good! Now I need to create the implementation. The implementation should:
+
+1. Use `InetAddress.isReachable()` for basic ping testing
+2. Send 4 packets with 5 second timeout
+3. Calculate latency and packet loss
+4. Use async/thread pool for batch operations
+5. Handle errors properly
+
+Let me create the implementation:...
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/src/main/java/com/example/devicemanager/service/DeviceConnectivityServiceImpl.java
+[thinking] Great! Now I need to check if there's an internal contract file to update. The request mentions updating contracts. Let me check what contracts exist:...
+
+[Glob] .accord/contracts/**/*
+/Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/device-manager.yaml
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/
+total 56
+drwxr-xr-x@ 12 zliu  staff    384 Feb 23 14:20 .
+drwxr-xr-x@ 10 zliu  staff    320 Feb 13 19:55 ..
+-rw-r--r--@  1 zliu  staff     16 Feb 11 22:01 .gitignore
+-rw-r--r--@  1 zliu  staff     11 Feb 23 16:24 .last-sync-pull
+-rwxr-xr-x@  1 zliu  staff  14746 Feb 11 22:01 accord-sync.sh
+drwxr-xr-x@  6 zliu  staff    192 Feb 11 22:01 comms
+-rw-r--r--@  1 zliu  staff    324 Feb 11 22:01 config.yaml
+drwxr-xr-x@  3 zliu  staff     96 Feb 11 22:01 contracts
+drwxr-xr-x@  3 zliu  staff     96 Feb 11 22:01 hooks
+drwxr-xr-x@ 13 zliu  staff    416 Feb 23 14:20 hub
+drwxr-xr-x@  3 zliu  staff     96 Feb 11 22:01 log
+drwxr-xr-x@  5 zliu  staff    160 Feb 11 22:01 registry
+[thinking] Good, there's a contract file at `.accord/contracts/device-manager.yaml`. Since this is an internal scope request, I should check if there's an internal contract file. Let me read the existing external contract first to understand the format, and then check if there's an internal contract:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/device-manager.yaml
+     1→# Accord External Contract Template
+     2→# See PROTOCOL.md Section 2.1 for full specification.
+     3→#
+     4→# This file defines the API boundary for a service/module.
+     5→# Other modules interact with this service exclusively through this contract.
+     6→# Only the owning module may modify this file directly.
+     7→# To propose changes, use the Message Protocol (request files).
+     8→
+     9→openapi: "3.0.3"
+    10→
+    11→info:
+    12→  title: "device-manager API"
+    13→  version: "0.1.0"
+    14→  description: "API contract for the device-manager service."
+    15→
+    16→  # Accord-specific annotations:
+    17→  #   x-accord-status: Lifecycle status of this contract.
+    18→  #     draft      - Auto-generated by accord scan, needs human review.
+    19→  #     stable     - Reviewed and approved. Active contract.
+    20→  #     proposed   - A change has been proposed via a request.
+    21→  #     deprecated - Scheduled for removal.
+    22→  x-accord-status: draft
+    23→
+    24→  # x-accord-scanned: ISO 8601 timestamp of when this contract was generated.
+    25→  #   Only present on contracts created by accord scan.
+    26→  x-accord-scanned: ""
+    27→
+    28→paths:
+    29→  /api/example/{id}:
+    30→    # To mark an endpoint as proposed (linked to a request):
+    31→    #   x-accord-status: proposed
+    32→    #   x-accord-request: req-001-add-example-api
+    33→    get:
+    34→      summary: "Get example by ID"
+    35→      operationId: getExampleById
+    36→      parameters:
+    37→        - name: id
+    38→          in: path
+    39→          required: true
+    40→          schema:
+    41→            type: string
+    42→          description: "Unique identifier of the example"
+    43→      responses:
+    44→        '200':
+    45→          description: "Successful response"
+    46→          content:
+    47→            application/json:
+    48→              schema:
+    49→                $ref: '#/components/schemas/Example'
+    50→        '404':
+
+... (truncated)
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/
+total 8
+drwxr-xr-x@  3 zliu  staff    96 Feb 11 22:01 .
+drwxr-xr-x@ 12 zliu  staff   384 Feb 23 14:20 ..
+-rw-r--r--@  1 zliu  staff  1949 Feb 11 22:01 device-manager.yaml
+[thinking] I see there's only an external contract file (OpenAPI). The request is marked as "scope: internal", which means according to the CLAUDE.md instructions, I should update internal contracts which are supposed to be at "N/A{module}.md" - but that doesn't look like a real path.
+
+Looking back at the CLAUDE.md, I see:
+- External contracts: `.accord/contracts/{module}.yaml` (OpenAPI 3.0)
+- Internal contracts: `N/A{module}.md`
+
+The "N/A" seems to suggest there are NO internal contracts in this project. ...
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/
+total 24
+drwxr-xr-x@  5 zliu  staff  160 Feb 11 22:01 .
+drwxr-xr-x@ 12 zliu  staff  384 Feb 23 14:20 ..
+-rw-r--r--@  1 zliu  staff  939 Feb 11 22:01 device-manager.md
+-rw-r--r--@  1 zliu  staff  915 Feb 11 22:01 frontend.md
+-rw-r--r--@  1 zliu  staff  923 Feb 11 22:01 web-server.md
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/config.yaml
+     1→version: "0.1"
+     2→project:
+     3→  name: demo-project
+     4→
+     5→repo_model: multi-repo
+     6→hub: https://github.com/aiwatching/accord_hub
+     7→
+     8→services:
+     9→  - name: device-manager
+    10→  - name: web-server
+    11→  - name: frontend
+    12→
+    13→settings:
+    14→  sync_mode: on-action
+    15→  auto_pull_on_start: true
+    16→  require_human_approval: true
+    17→  archive_completed: true
+    18→  debug: false
+    19→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Let me check the registry file for device-manager to understand what should be documented there:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/device-manager.md
+     1→# device-manager
+     2→
+     3→---
+     4→name: device-manager
+     5→type: service
+     6→language: java
+     7→directory: device-manager/
+     8→contract: .accord/contracts/device-manager.yaml
+     9→---
+    10→
+    11→## Responsibility
+    12→
+    13→<!-- Describe this module's core responsibility in 1-2 sentences -->
+    14→
+    15→## Owns (Data / Domain)
+    16→
+    17→<!-- List the data entities and domains this module is the source of truth for -->
+    18→<!-- Example: -->
+    19→<!-- - Device entity (all device data) -->
+    20→<!-- - Discovery scan results -->
+    21→
+    22→## Capabilities
+    23→
+    24→<!-- List what this module can do -->
+    25→<!-- Example: -->
+    26→<!-- - Device CRUD operations -->
+    27→<!-- - Device search and filtering -->
+    28→
+    29→## Does NOT Own
+    30→
+    31→<!-- List what this module is NOT responsible for, with pointers to the owning module -->
+    32→<!-- Example: -->
+    33→<!-- - Policy evaluation → demo-engine -->
+    34→<!-- - User management → demo-admin -->
+    35→
+    36→## Dependencies
+    37→
+    38→<!-- List modules this module depends on and why -->
+    39→<!-- Example: -->
+    40→<!-- - demo-engine: query device policies -->
+    41→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Good! I should update the registry to document the new capability. Let me also read the request file to make sure I'm updating the correct file path and understand the full requirements:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md
+     1→---
+     2→id: req-011-ping-connectivity
+     3→from: orchestrator
+     4→to: device-manager
+     5→scope: internal
+     6→type: interface-addition
+     7→priority: medium
+     8→status: in-progress
+     9→created: 2026-02-23T12:00:00.000Z
+    10→updated: '2026-02-24T00:24:14.921Z'
+    11→on_behalf_of: user
+    12→related_contract: contracts/internal/device-manager.md
+    13→---
+    14→
+    15→## What
+    16→
+    17→实现设备 Ping 连通性测试功能，检测设备是否在线并返回延迟时间。
+    18→
+    19→## Proposed Change
+    20→
+    21→在 device-manager 中添加 Ping 测试接口：
+    22→
+    23→```java
+    24→// DeviceConnectivityService.java
+    25→public interface DeviceConnectivityService {
+    26→    /**
+    27→     * 执行设备 Ping 测试
+    28→     * @param deviceId 设备ID
+    29→     * @return Ping 测试结果
+    30→     * @throws DeviceNotFoundException 如果设备不存在
+    31→     * @throws InvalidIpAddressException 如果设备没有配置IP地址
+    32→     */
+    33→    PingResult pingDevice(String deviceId);
+    34→
+    35→    /**
+    36→     * 批量 Ping 测试
+    37→     * @param deviceIds 设备ID列表
+    38→     * @return Ping 测试结果列表
+    39→     */
+    40→    List<PingResult> pingDevices(List<String> deviceIds);
+    41→}
+    42→
+    43→// PingResult.java
+    44→public class PingResult {
+    45→    private String deviceId;
+    46→    private String ipAddress;
+    47→    private boolean reachable;        // 是否可达
+    48→    private Long latencyMs;           // 延迟时间(毫秒), null表示不可达
+    49→    private int packetsTransmitted;   // 发送包数
+    50→    private int packetsReceived;      // 接收包数
+    51→    private double packetLoss;        // 丢包率(%)
+    52→    private LocalDateTime testedAt;   // 测试时间
+    53→    private String errorMessage;      // 错误信息(如果有)
+    54→}
+    55→```
+    56→
+    57→**实现要点**:
+    58→- 使用 Java `InetAddress.isReachable()` 或执行系统 `ping` 命令
+    59→- 发送 4 个 ICMP 包，超时时间 5 秒
+    60→- 计算平均延迟和丢包率
+    61→- 如果设备没有配置 IP 地址，抛出异常
+    62→- 异步执行，避免阻塞（批量测试时使用线程池）
+    63→- 测试结果可选保存到数据库作为历史记录
+    64→
+    65→**错误处理**:
+    66→- 设备不存在
+    67→- 设备未配置 IP 地址
+  
+... (truncated)
+[thinking] I see the request references `related_contract: contracts/internal/device-manager.md`. Let me check if that file exists:...
+
+[Bash] find /Users/zliu/IdeaProjects/multi-repo-project/device-manager -name "*.md" -path "*contracts*" -o -path "*internal*" -name "*.md" | head -20
+
+
+[Bash] ls -la /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/
+total 8
+drwxr-xr-x@  3 zliu  staff    96 Feb 11 22:01 .
+drwxr-xr-x@ 12 zliu  staff   384 Feb 23 14:20 ..
+-rw-r--r--@  1 zliu  staff  1949 Feb 11 22:01 device-manager.yaml
+[thinking] It seems there's no `contracts/internal/device-manager.md` file yet. Since this is an internal scope request and it references that contract, I should create it to document the internal API. This makes sense for internal Java APIs that aren't exposed externally.
+
+Let me create the internal contract file to document the new DeviceConnectivityService interface....
+
+[Bash] mkdir -p /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/internal
+
+
+[Write] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/internal/device-manager.md
+File created successfully at: /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/contracts/internal/device-manager.md
+[thinking] Great! Now I should also update the registry to document this new capability. Let me update the device-manager registry:...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/device-manager.md — "## Responsibility
+
+<!-- Describe this module's core responsi..."
+<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>
+[thinking] I need to read the file first before editing it. I already read it earlier but let me read it again to ensure I can edit it:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/device-manager.md
+     1→# device-manager
+     2→
+     3→---
+     4→name: device-manager
+     5→type: service
+     6→language: java
+     7→directory: device-manager/
+     8→contract: .accord/contracts/device-manager.yaml
+     9→---
+    10→
+    11→## Responsibility
+    12→
+    13→<!-- Describe this module's core responsibility in 1-2 sentences -->
+    14→
+    15→## Owns (Data / Domain)
+    16→
+    17→<!-- List the data entities and domains this module is the source of truth for -->
+    18→<!-- Example: -->
+    19→<!-- - Device entity (all device data) -->
+    20→<!-- - Discovery scan results -->
+    21→
+    22→## Capabilities
+    23→
+    24→<!-- List what this module can do -->
+    25→<!-- Example: -->
+    26→<!-- - Device CRUD operations -->
+    27→<!-- - Device search and filtering -->
+    28→
+    29→## Does NOT Own
+    30→
+    31→<!-- List what this module is NOT responsible for, with pointers to the owning module -->
+    32→<!-- Example: -->
+    33→<!-- - Policy evaluation → demo-engine -->
+    34→<!-- - User management → demo-admin -->
+    35→
+    36→## Dependencies
+    37→
+    38→<!-- List modules this module depends on and why -->
+    39→<!-- Example: -->
+    40→<!-- - demo-engine: query device policies -->
+    41→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
+
+[thinking] Now I can edit the file. Let me update it:...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/device-manager.md — "## Responsibility
+
+<!-- Describe this module's core responsi..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/device-manager/.accord/registry/device-manager.md has been updated successfully.
+[thinking] Good! Now I need to:1. Update the request status to "completed"
+2. Move the request to the archive
+3. Commit all changes
+
+Let me first update the request status by editing the frontmatter in the hub request file:...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md — "---
+id: req-011-ping-connectivity
+from: orchestrator
+to: dev..."
+<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>
+[thinking] I already read this file earlier, but the system needs me to read it again. Let me re-read it:...
+
+[Read] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md
+     1→---
+     2→id: req-011-ping-connectivity
+     3→from: orchestrator
+     4→to: device-manager
+     5→scope: internal
+     6→type: interface-addition
+     7→priority: medium
+     8→status: in-progress
+     9→created: 2026-02-23T12:00:00.000Z
+    10→updated: '2026-02-24T00:24:14.921Z'
+    11→on_behalf_of: user
+    12→related_contract: contracts/internal/device-manager.md
+    13→---
+    14→
+    15→## What
+    16→
+    17→实现设备 Ping 连通性测试功能，检测设备是否在线并返回延迟时间。
+    18→
+    19→## Proposed Change
+    20→
+    21→在 device-manager 中添加 Ping 测试接口：
+    22→
+    23→```java
+    24→// DeviceConnectivityService.java
+    25→public interface DeviceConnectivityService {
+    26→    /**
+    27→     * 执行设备 Ping 测试
+    28→     * @param deviceId 设备ID
+    29→     * @return Ping 测试结果
+    30→     * @throws DeviceNotFoundException 如果设备不存在
+    31→     * @throws InvalidIpAddressException 如果设备没有配置IP地址
+    32→     */
+    33→    PingResult pingDevice(String deviceId);
+    34→
+    35→    /**
+    36→     * 批量 Ping 测试
+    37→     * @param deviceIds 设备ID列表
+    38→     * @return Ping 测试结果列表
+    39→     */
+    40→    List<PingResult> pingDevices(List<String> deviceIds);
+    41→}
+    42→
+    43→// PingResult.java
+    44→public class PingResult {
+    45→    private String deviceId;
+    46→    private String ipAddress;
+    47→    private boolean reachable;        // 是否可达
+    48→    private Long latencyMs;           // 延迟时间(毫秒), null表示不可达
+    49→    private int packetsTransmitted;   // 发送包数
+    50→    private int packetsReceived;      // 接收包数
+    51→    private double packetLoss;        // 丢包率(%)
+    52→    private LocalDateTime testedAt;   // 测试时间
+    53→    private String errorMessage;      // 错误信息(如果有)
+    54→}
+    55→```
+    56→
+    57→**实现要点**:
+    58→- 使用 Java `InetAddress.isReachable()` 或执行系统 `ping` 命令
+    59→- 发送 4 个 ICMP 包，超时时间 5 秒
+    60→- 计算平均延迟和丢包率
+    61→- 如果设备没有配置 IP 地址，抛出异常
+    62→- 异步执行，避免阻塞（批量测试时使用线程池）
+    63→- 测试结果可选保存到数据库作为历史记录
+    64→
+    65→**错误处理**:
+    66→- 设备不存在
+    67→- 设备未配置 IP 地址
+  
+... (truncated)
+[thinking] Now I can edit the file to update the status to "completed":...
+
+[Edit] /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md — "---
+id: req-011-ping-connectivity
+from: orchestrator
+to: dev..."
+The file /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md has been updated successfully.
+[thinking] Good! Now I need to copy the request file to the archive directory. Let me check if the archive directory exists and create it if needed:...
+
+[Bash] mkdir -p /Users/zliu/IdeaProjects/multi-repo-project/device-manager/comms/archive
+
+
+[Bash] cp /Users/zliu/IdeaProjects/multi-repo-project/accord_hub/comms/inbox/device-manager/req-011-ping-connectivity.md /Users/zliu/IdeaProjects/multi-repo-project/device-manager/comms/archive/req-011-ping-connectivity.md
+

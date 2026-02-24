@@ -1,0 +1,341 @@
+openapi: 3.0.0
+info:
+  title: Web Server API
+  description: BFF layer - aggregates device-manager data, provides dashboard and admin APIs
+  version: 0.1.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /api/dashboard/stats:
+    get:
+      summary: Get dashboard statistics
+      operationId: getDashboardStats
+      responses:
+        '200':
+          description: Dashboard statistics
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /api/dashboard/devices:
+    get:
+      summary: Get device summaries for dashboard
+      operationId: getDashboardDevices
+      responses:
+        '200':
+          description: List of device summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /api/admin/users:
+    get:
+      summary: Get all users
+      operationId: getAllUsers
+      security:
+        - BearerAuth: [admin]
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserResponse'
+        '403':
+          description: Forbidden - Admin role required
+    post:
+      summary: Create a new user
+      operationId: createUser
+      security:
+        - BearerAuth: [admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '403':
+          description: Forbidden - Admin role required
+
+  /api/admin/users/{id}:
+    put:
+      summary: Update user information
+      operationId: updateUser
+      security:
+        - BearerAuth: [admin]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        '200':
+          description: User updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '403':
+          description: Forbidden - Admin role required
+        '404':
+          description: User not found
+    delete:
+      summary: Delete a user
+      operationId: deleteUser
+      security:
+        - BearerAuth: [admin]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User deleted successfully
+        '403':
+          description: Forbidden - Admin role required
+        '404':
+          description: User not found
+
+  /api/admin/settings:
+    get:
+      summary: Get system settings
+      operationId: getSettings
+      security:
+        - BearerAuth: [admin]
+      responses:
+        '200':
+          description: System settings as key-value pairs
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '403':
+          description: Forbidden - Admin role required
+    put:
+      summary: Update system settings
+      operationId: updateSettings
+      security:
+        - BearerAuth: [admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+      responses:
+        '200':
+          description: Settings updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+        '403':
+          description: Forbidden - Admin role required
+
+  /api/devices/{id}/ping:
+    post:
+      summary: Test single device connectivity
+      description: Execute Ping test to check if device is online
+      operationId: pingDevice
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Device ID
+      responses:
+        '200':
+          description: Ping test successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResult'
+        '400':
+          description: Device has no IP address configured
+        '401':
+          description: Unauthorized
+        '404':
+          description: Device not found
+        '503':
+          description: Service temporarily unavailable (e.g., ping command execution failed)
+
+  /api/devices/ping/batch:
+    post:
+      summary: Batch test device connectivity
+      description: Test connectivity of multiple devices simultaneously
+      operationId: pingDevicesBatch
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchPingRequest'
+      responses:
+        '200':
+          description: Batch test results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchPingResponse'
+        '400':
+          description: Invalid request (e.g., empty device ID list or exceeds limit)
+        '401':
+          description: Unauthorized
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    UserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [admin, user]
+        createdAt:
+          type: string
+          format: date-time
+
+    CreateUserRequest:
+      type: object
+      required:
+        - username
+        - email
+        - password
+        - role
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        role:
+          type: string
+          enum: [admin, user]
+
+    UpdateUserRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        role:
+          type: string
+          enum: [admin, user]
+
+    PingResult:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          example: "dev-1234567890"
+        ipAddress:
+          type: string
+          example: "192.168.1.1"
+        reachable:
+          type: boolean
+          example: true
+        latencyMs:
+          type: number
+          format: double
+          nullable: true
+          example: 12.5
+          description: Average latency in milliseconds, null if unreachable
+        packetsTransmitted:
+          type: integer
+          example: 4
+        packetsReceived:
+          type: integer
+          example: 4
+        packetLoss:
+          type: number
+          format: double
+          example: 0
+          description: Packet loss percentage
+        testedAt:
+          type: string
+          format: date-time
+        errorMessage:
+          type: string
+          nullable: true
+
+    BatchPingRequest:
+      type: object
+      required:
+        - deviceIds
+      properties:
+        deviceIds:
+          type: array
+          items:
+            type: string
+          example: ["dev-001", "dev-002", "dev-003"]
+          maxItems: 50
+
+    BatchPingResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PingResult'
+        totalCount:
+          type: integer
+          example: 3
+        reachableCount:
+          type: integer
+          example: 2
+        unreachableCount:
+          type: integer
+          example: 1

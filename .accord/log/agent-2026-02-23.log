@@ -894,3 +894,556 @@ Could not apply b573c60... # accord: dispatcher processed 3 request(s)
 [accord-agent] 2026-02-23 19:34:28 [INFO] Dispatching: 1 pending request(s)
 [accord-agent] 2026-02-23 19:34:33 [INFO] Dispatching: 1 pending request(s)
 [accord-agent] 2026-02-23 19:34:38 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 19:35:16 [INFO] [claude-code] Completed: 18 turns, $0.2679, input=46, output=3099, cache_read=384964
+[accord-agent] 2026-02-23 19:35:17 [INFO] Local dispatch completed: req-1771875233578-s84kot — 18 turns, $0.2679, 83722ms
+[accord-agent] 2026-02-23 19:36:08 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:36:08 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:36:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:36:09 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:42:58 [INFO] Shutting down...
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:42:58 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:43:00 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 19:43:00 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 19:43:00 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 19:43:00 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 19:43:00 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:05 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:43:05 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:11 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:43:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 19:43:33 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:43:37 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 19:43:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:35 [INFO] Shutting down...
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:35 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:00:37 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 20:00:37 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 20:00:37 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 20:00:37 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 20:00:37 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 20:00:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:38 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:00:52 [INFO] [session] Orchestrator message: frontendqi'dong...
+[accord-agent] 2026-02-23 20:10:52 [ERROR] [session] Orchestrator error: Error: Agent timed out after 600s
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:36 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 20:18:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 20:18:40 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:38 [INFO] Shutting down...
+[accord-agent] 2026-02-23 21:22:38 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:22:38 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:22:38 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:22:39 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 21:22:39 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 21:22:39 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 21:22:39 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 21:22:39 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:42 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:44 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:44 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:22:47 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:22:47 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:23:04 [INFO] [session] Orchestrator message: 让 frontend 启动...
+[accord-agent] 2026-02-23 21:23:08 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:23:08 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:23:09 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:23:12 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:23:19 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:19 [INFO] Local dispatch: req-007-start-service → frontend (dir: /Users/zliu/IdeaProjects/multi-repo-project/frontend)
+[accord-agent] 2026-02-23 21:23:19 [INFO] triggerDispatch: dispatched 1 request(s)
+[accord-agent] 2026-02-23 21:23:24 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:29 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:34 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:38 [INFO] [claude-code] Completed: 5 turns, $0.3067, input=59, output=1432, cache_read=180848
+[accord-agent] 2026-02-23 21:23:39 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:44 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:49 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:54 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:23:59 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:04 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:09 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:14 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:19 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:24 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:29 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:34 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:39 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:44 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:24:49 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 21:25:17 [INFO] [claude-code] Completed: 21 turns, $0.4642, input=414, output=5093, cache_read=462623
+[accord-agent] 2026-02-23 21:25:17 [INFO] Local dispatch completed: req-007-start-service — 21 turns, $0.4642, 117845ms
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:00 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 21:46:04 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:00:40 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:00:40 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:00:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:00:57 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:00:57 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:01:01 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:01:01 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:10:45 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:45 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:49 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:49 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:53 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:54 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:54 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:57 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:10:57 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:25 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:18:27 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:18:27 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:18:27 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:18:27 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:18:27 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:28 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:31 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:18:31 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:19:59 [INFO] [session] Orchestrator message: 增加一个device...
+[accord-agent] 2026-02-23 22:20:07 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:20:07 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:20:08 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:20:08 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:20:22 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 22:20:22 [INFO] Local dispatch: req-008-add-device-creation → device-manager (dir: /Users/zliu/IdeaProjects/multi-repo-project/device-manager)
+[accord-agent] 2026-02-23 22:20:22 [INFO] triggerDispatch: dispatched 1 request(s)
+[accord-agent] 2026-02-23 22:20:27 [INFO] Dispatching: 1 pending request(s)
+[accord-agent] 2026-02-23 22:20:32 [INFO] Dispatching: 2 pending request(s)
+[accord-agent] 2026-02-23 22:20:32 [INFO] Local dispatch: req-009-add-device-api → web-server (dir: /Users/zliu/IdeaProjects/multi-repo-project/web-server)
+[accord-agent] 2026-02-23 22:20:32 [INFO] triggerDispatch: dispatched 1 request(s)
+[accord-agent] 2026-02-23 22:20:37 [INFO] Dispatching: 2 pending request(s)
+[accord-agent] 2026-02-23 22:20:42 [INFO] Dispatching: 2 pending request(s)
+[accord-agent] 2026-02-23 22:20:47 [INFO] Dispatching: 2 pending request(s)
+[accord-agent] 2026-02-23 22:20:52 [INFO] Dispatching: 3 pending request(s)
+[accord-agent] 2026-02-23 22:20:52 [INFO] Local dispatch: req-010-add-device-ui → frontend (dir: /Users/zliu/IdeaProjects/multi-repo-project/frontend)
+[accord-agent] 2026-02-23 22:20:52 [INFO] triggerDispatch: dispatched 1 request(s)
+[accord-agent] 2026-02-23 22:20:57 [INFO] Dispatching: 3 pending request(s)
+[accord-agent] 2026-02-23 22:21:02 [INFO] Dispatching: 3 pending request(s)
+[accord-agent] 2026-02-23 22:21:07 [INFO] Dispatching: 3 pending request(s)
+[accord-agent] 2026-02-23 22:21:12 [INFO] Dispatching: 3 pending request(s)
+[accord-agent] 2026-02-23 22:21:13 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:13 [INFO] Local dispatch completed: req-010-add-device-ui — undefined turns, $undefined, 21170ms
+[accord-agent] 2026-02-23 22:21:13 [INFO] Local dispatch completed: req-009-add-device-api — undefined turns, $undefined, 41191ms
+[accord-agent] 2026-02-23 22:21:13 [INFO] Local dispatch completed: req-008-add-device-creation — undefined turns, $undefined, 51191ms
+[accord-agent] 2026-02-23 22:21:14 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:21:15 [INFO] Server stopped
+[accord-agent] 2026-02-23 22:21:17 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:21:17 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:21:17 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:21:17 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:21:17 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:21:19 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:19 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:20 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:21 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:26 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:26 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:26 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:27 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:30 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:33 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:51 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:21:51 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:54 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:21:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:30 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:30 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:32 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:28:32 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:28:32 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:28:32 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:28:32 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:33 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:39 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:39 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:28:41 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:28:41 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:32:33 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:32:33 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:32:34 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:32:34 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:32:34 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:32:34 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:34:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:34:32 [INFO] Server stopped
+[accord-agent] 2026-02-23 22:34:34 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:34:34 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:34:34 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:34:34 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:34:34 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:36 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:56 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:34:56 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:35:03 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:35:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:48 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:44:48 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:44:48 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:44:52 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:44:52 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:44:52 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:44:52 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:44:52 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:44:54 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:55 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:44:57 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:44:57 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:49:59 [INFO] Shutting down...
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:49:59 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:50:01 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 22:50:01 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 22:50:01 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 22:50:01 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 22:50:01 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 22:50:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:02 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:03 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:06 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 22:50:08 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 22:50:08 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:42 [INFO] Shutting down...
+[accord-agent] 2026-02-23 23:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:42 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:44 [INFO] Loaded 1 session(s) from disk
+[accord-agent] 2026-02-23 23:00:44 [INFO] Dispatcher initialized: agent=claude-code
+[accord-agent] 2026-02-23 23:00:44 [INFO] Hub Service listening on http://localhost:3000
+[accord-agent] 2026-02-23 23:00:44 [INFO] Contract pipeline: listening for a2a:artifact-update events
+[accord-agent] 2026-02-23 23:00:44 [INFO] Accord Hub Service started — port 3000, A2A mode
+[accord-agent] 2026-02-23 23:00:45 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:45 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:46 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:48 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:49 [INFO] WebSocket client connected
+[accord-agent] 2026-02-23 23:00:52 [INFO] WebSocket client disconnected
+[accord-agent] 2026-02-23 23:00:52 [INFO] WebSocket client connected
+[accord-agent] 2026-02-24 00:21:23 [INFO] Shutting down...
+[accord-agent] 2026-02-24 00:21:23 [INFO] WebSocket client disconnected
